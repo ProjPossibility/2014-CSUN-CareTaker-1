@@ -3,34 +3,45 @@
 class MedicationController extends \BaseController {
 
 	/**
-	 * Display a listing of the resource.
+	 * Return all medications for the logged in user. 
 	 *
 	 * @return Response
 	 */
 	public function index()
 	{
-		//
+		$user_id = Auth::user()->id;
+		return Medication::where("user_id",$user_id)->get();
 	}
 
 	/**
-	 * Show the form for creating a new resource.
+	 * Store a newly created medication in storage.
 	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
-
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
+	 * @return Medication record
 	 */
 	public function store()
 	{
-		//
-	}
+		$rules = array(
+            'user_id'            => 'required|integer',
+            'name'               => 'required',
+            'dosage'             => 'required',
+            'requirements'       => '',
+            'notes'				 => ''
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->fails())
+        {
+        	return $validator->messages();
+        } 
+
+        /* Add new medication */ 
+        $medication = new Medication();
+		$medication->fill(Input::only(array_keys($rules))); // fill valid data only
+        $medication->save();
+
+        /* Return Response */
+        return $medication;
+ 	}
 
 	/**
 	 * Display the specified resource.
@@ -39,17 +50,6 @@ class MedicationController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
 	{
 		//
 	}
