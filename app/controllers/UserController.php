@@ -89,7 +89,14 @@ class UserController extends \BaseController {
 	 */
 	public function getMedications($id)
 	{
-		return User::with("medications")->findOrFail($id);
+		/* Return Response */
+        $response = array(
+			'message' 		=> 'The user medication list successfully found',
+			'data'			=> User::with("medications")->findOrFail($id)->toArray(),
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
 	}
 
 }
