@@ -1,5 +1,4 @@
 <div>
-
 	<button class="btn btn-primary" ng-click="addMedForm = true">Add Medication</button>
 	<button class="btn btn-default" ng-click="edit = true">Edit All</button>
 	<button class="btn btn-success" ng-show="edit" 
@@ -14,10 +13,10 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<td>Adderall</td>
-				<td>100 mg</td>
-				<td>Take by mouth 1 to 3 times a day.</td>
+			<tr ng-repeat="medication in medications">
+				<td>{{ medication.name }}</td>
+				<td>{{ medication.dosage }}</td>
+				<td>{{ medication.requirements }}</td>
 			</tr>
 		</tbody>
 	</table>

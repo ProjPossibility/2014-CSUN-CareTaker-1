@@ -17,6 +17,7 @@ angular.module('directives', [])
 	return {
 		restrict: 'E',
 		replace: 'true',
+		controller: 'MedicationsCtrl',
 		templateUrl: 'angular/directives/medications.html'
 	}
 })

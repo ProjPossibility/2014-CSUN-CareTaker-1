@@ -8,6 +8,7 @@ var app = angular
 		'factories.user_info',
 		'factories.users',
 		'factories.appointments',
+		'factories.medications',
 		'ui.bootstrap',
 		'ui.select2'
 	])
