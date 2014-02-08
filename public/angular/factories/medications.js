@@ -5,6 +5,9 @@ angular.module('factories.medications', ['ngResource'])
 			{
 				get: {
 					method: 'GET'
+				},
+				add: {
+					method: 'POST'
 				}
 			}
 		);
