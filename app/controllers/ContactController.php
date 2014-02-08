@@ -63,19 +63,32 @@ class ContactController extends \BaseController {
 	}
 
 	/**
-	 * Display the specified resource.
+	 * Display specific contact of the current user
 	 *
+	 * @link api/v1/contacts/{id}	GET
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
 	{
-		//
+		$contact = Contact::
+			with("user")
+			->where('contact_for_user_id',Auth::user()->id)->findOrFail($id);
+
+		/* Return Response */
+        $response = array(
+			'message' 		=> 'The contact was found',
+			'data'			=> $contact->toArray(),
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
 	}
 
 	/**
 	 * Update the specified resource in storage.
 	 *
+	 * @link api/v1/contacts/{id}	PUT
 	 * @param  int  $id
 	 * @return Response
 	 */
@@ -87,12 +100,23 @@ class ContactController extends \BaseController {
 	/**
 	 * Remove the specified resource from storage.
 	 *
+	 * @link api/v1/contacts/{id}	DELETE
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function destroy($id)
 	{
-		//
+		$contact = Contact::where('contact_for_user_id',Auth::user()->id)->findOrFail($id);
+		$contact->delete();
+
+		/* Return Response */
+        $response = array(
+			'message' 		=> 'The contact has been been deleted',
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
+
 	}
 
 }
