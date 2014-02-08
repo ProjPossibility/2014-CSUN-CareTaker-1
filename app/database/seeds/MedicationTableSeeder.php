@@ -10,7 +10,7 @@ class MedicationTableSeeder extends Seeder {
 			'user_id'		=> 4,
 			'name'			=> 'Adderall',
 			'dosage'		=> '100 mg',
-			'requirements'	=> 'Take 1 to 3 times daily with our without food.',
+			'requirements'	=> 'Take 1 to 3 times daily with or without food.',
 			'notes'			=> 'Do not exceed 12 tablets within a 24 hour period',
 			'created_at'	=> new DateTime,
 			'updated_at'	=> new DateTime
