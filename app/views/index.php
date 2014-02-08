@@ -49,5 +49,8 @@
         <script src="angular/factories/users.js"></script>
         <script src="angular/directives/directives.js"></script>
         <script src="angular/controllers/home_controller.js"></script>
+
+        
+        <script src="angular/controllers/weather_controller.js"></script>
     </body>
 </html>
