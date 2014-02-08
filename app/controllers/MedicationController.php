@@ -40,6 +40,13 @@ class MedicationController extends \BaseController {
         $medication->save();
 
         /* Return Response */
+        $response = array(
+			'message' 		=> 'The medication has been successfully added',
+			'data'			=> $medication->toArray(),
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
         return $medication;
  	}
 
