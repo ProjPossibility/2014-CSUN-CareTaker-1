@@ -17,8 +17,7 @@ angular.module('directives', [])
 	return {
 		restrict: 'E',
 		replace: 'true',
-		templateUrl: 'angular/directives/medications.html',
-		controller: 'MedicationsCtrl'
+		templateUrl: 'angular/directives/medications.html'
 	}
 })
 .directive('contacts', function() {
