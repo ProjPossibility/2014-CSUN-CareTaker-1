@@ -1,0 +1,15 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+body {
+    background-color: #fbfbfb;
+    padding-top: 75px;
+    padding-bottom: 100px;
+}
+h2 { margin-bottom: 15px; }
+a:hover, a:focus { text-decoration: none; }
+.done-true { text-decoration: line-through; color: grey; }
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+.select2-container { width: 215px; }
+ul.nav.nav-tabs { margin-bottom: 5px; }
+div.fc-event-inner { background-color: #3a87ad; font-family: Arial, sans-serif; color: white; }
