@@ -49,23 +49,32 @@ class MedicationController extends \BaseController {
 		);
 
 		return Response::make($response, 200);
-        return $medication;
  	}
 
 	/**
-	 * Display the specified resource.
+	 * Return a specific medication for a user
 	 *
 	 * @link api/v1/medications/{id}	GET
 	 * @param  int  $id
 	 * @return Response
 	 */
 	public function show($id)
-	{
-		//
+	{	
+
+		$medication = Medication::where('user_id',Auth::user()->id)->findOrFail($id);
+
+		/* Return Response */
+        $response = array(
+			'message' 		=> 'The medication has been successfully added',
+			'data'			=> $medication->toArray(),
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
 	}
 
 	/**
-	 * Update the specified resource in storage.
+	 * Update medication in storage.
 	 *
 	 * @link api/v1/medications/{id}	PUT
 	 * @param  int  $id
@@ -73,11 +82,36 @@ class MedicationController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$rules = array(
+            'name'               => 'required',
+            'dosage'             => 'required',
+            'requirements'       => '',
+            'notes'				 => ''
+        );
+
+        $validator = Validator::make(Input::all(), $rules);
+        if ($validator->fails())
+        {
+        	return $validator->messages();
+        } 
+
+        /* Add new medication */ 
+       	$medication = Medication::where('user_id',Auth::user()->id)->findOrFail($id);
+       	$medication->fill(Input::only(array_keys($rules))); // fill valid data only
+        $medication->save();
+
+        /* Return Response */
+        $response = array(
+			'message' 		=> 'The medication has been successfully updated',
+			'data'			=> $medication->toArray(),
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
 	}
 
 	/**
-	 * Remove the specified resource from storage.
+	 * Remove the medication from storage.
 	 *
 	 * @link api/v1/medications/{id}	DELETE
 	 * @param  int  $id
@@ -85,7 +119,8 @@ class MedicationController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$medication = Medication::where('user_id',Auth::user()->id)->findOrFail($id);
+		$medication->delete();
 	}
 
 }
