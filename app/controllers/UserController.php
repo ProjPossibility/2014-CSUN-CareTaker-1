@@ -64,6 +64,13 @@ class UserController extends \BaseController {
 		//
 	}
 
+	/**
+	 * Show user's appointments
+	 *
+	 * @link api/v1/users/{id}/appointments	 GET
+	 * @param  int  $id
+	 * @return Response
+	 */
 	public function getAppointments($id)
 	{
 		$response = array(
@@ -71,6 +78,18 @@ class UserController extends \BaseController {
     	);
 
 		return Response::make($response, 200);
+	}
+
+	/**
+	 * Show user's medications
+	 *
+	 * @link api/v1/users/{id}/medications	GET
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function getMedications($id)
+	{
+		return User::with("medications")->findOrFail($id);
 	}
 
 }

@@ -16,6 +16,8 @@ Route::resource('api/v1/appointments', 'AppointmentController');
 
 Route::get('api/v1/users/{id}/appointments', 'UserController@getAppointments');
 
+Route::get('api/v1/users/{id}/medications', 'UserController@getMedications');
+
 Route::get('/', 'HomeController@getIndex');
 Route::get('logout', 'HomeController@getLogout');
 Route::get('userinfo', 'HomeController@getUserInfo');
