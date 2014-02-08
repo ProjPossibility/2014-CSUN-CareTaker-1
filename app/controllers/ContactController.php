@@ -14,7 +14,7 @@ class ContactController extends \BaseController {
 			->where("contact_for_user_id",Auth::user()->id)
 			->orderBy("order_id")
 			->get();
-			
+
 	    $response = array(
 			'message' 		=> 'Your contacts list has been returned',
 			'data'			=> $contact->toArray(),
@@ -22,16 +22,6 @@ class ContactController extends \BaseController {
 		);
 
 		return Response::make($response, 200);
-	}
-
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
 	}
 
 	/**
@@ -51,17 +41,6 @@ class ContactController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
 	{
 		//
 	}
