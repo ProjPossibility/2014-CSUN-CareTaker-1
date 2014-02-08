@@ -50,10 +50,12 @@
 			placeholder="e.g. Do not exceed 200 mg in a 24 hour period.">
 		</textarea>
 
-		<button class="btn btn-success" ng-click="addMed(medication)">Add</button>
+		<button class="btn btn-success" 
+			ng-click="addMed(medication);
+				addMedForm = false;">Add</button>
 		<button class="btn btn-default"
 			ng-click="addMedForm = false;
-				medication.name = '';
+				medication.name='';
 				medication.dosage='';
 				medication.requirements='';
 				medication.notes=''">Cancel</button>
