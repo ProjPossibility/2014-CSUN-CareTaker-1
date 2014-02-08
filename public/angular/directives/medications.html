@@ -5,7 +5,8 @@
 		</button>
 		<button class="btn btn-default" ng-click="edit = true">Edit All</button>
 		<button class="btn btn-success" ng-show="edit" 
-			ng-click="edit = false">Save Changes</button>
+			ng-click="edit = false;
+			updateMed(medication)">Save Changes</button>
 	</div>
 	<table class="table">
 		<thead>
@@ -17,11 +18,35 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="medication in medications">
+			<tr ng-repeat="medication in medications"
+				ng-hide="edit">
 				<td>{{ medication.name }}</td>
 				<td>{{ medication.dosage }}</td>
 				<td>{{ medication.requirements }}</td>
 				<td>{{ medication.notes }}</td>
+			</tr>
+			<tr ng-repeat="medication in medications"
+				ng-show="edit">
+				<td>
+					<input type="text" 
+						class="form-control"
+						ng-model="medication.name">
+				</td>
+				<td>
+					<input type="text"
+						class="form-control"
+						ng-model="medication.dosage">
+				</td>
+				<td>
+					<textarea class="form-control" rows="3"
+						ng-model="medication.requirements">
+					</textarea>
+				</td>
+				<td>
+					<textarea class="form-control" rows="3"
+						ng-model="medication.notes">
+					</textarea>
+				</td>
 			</tr>
 		</tbody>
 	</table>
