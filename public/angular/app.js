@@ -22,8 +22,8 @@ var app = angular
 				.otherwise(({redirectTo: '/'}))
 		}
 	])
-	.run(['$rootScope', 'UserInfo', 'Users', 'Appointments', 
-		function ($rootScope, UserInfo, Users, Appointments) {
+	.run(['$rootScope', 'UserInfo', 'Users', 'Appointments', 'Medications', 
+		function ($rootScope, UserInfo, Users, Appointments, Medications) {
 			UserInfo.get({}, function (data) {
 				if (!$rootScope.user_id) {
 					$rootScope.user_id = data.data.id;
@@ -38,6 +38,12 @@ var app = angular
 				}, function (data) {
 					$rootScope.appointments = data.data;
 				});
+
+				Medications.get({},
+					function(data) {
+						$rootScope.medications = data.data;
+					}
+				)
 			});
 		}
 	]

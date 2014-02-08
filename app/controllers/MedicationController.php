@@ -10,8 +10,13 @@ class MedicationController extends \BaseController {
 	 */
 	public function index()
 	{
-		$user_id = Auth::user()->id;
-		return Medication::where("user_id",$user_id)->get();
+		$medication = Medication::where("user_id",Auth::user()->id)->get();
+	    $response = array(
+			'message' 		=> 'The medication has been successfully found',
+			'data'			=> $medication->toArray(),
+			'status' 	 	=> 200       
+		);
+		return Response::make($response, 200);
 	}
 
 	/**
