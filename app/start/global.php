@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,16 @@ Log::useFiles(storage_path().'/logs/laravel.log');
 App::error(function(Exception $exception, $code)
 {
 	Log::error($exception);
+});
+
+App::error(function(ModelNotFoundException $exception)
+{
+	Log::error($exception);
+	$response_array = array(
+		'status' 		=> 409,
+		'message' 	=> 'The resource you have requested could not be found.'
+	);
+	return Response::make($response_array, 409);
 });
 
 /*
