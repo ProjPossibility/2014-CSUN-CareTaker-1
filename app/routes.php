@@ -10,8 +10,13 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
+Route::resource('api/v1/users', 'UserController');
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'HomeController@getIndex');
+Route::get('logout', 'HomeController@getLogout');
+Route::get('userinfo', 'HomeController@getUserInfo');
+
+Route::get('login', 'AuthController@getLogin');
+Route::post('login', 'AuthController@postLogin');
+Route::get('register', 'AuthController@getRegister');
+Route::post('register', 'AuthController@postRegister');
