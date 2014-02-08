@@ -64,4 +64,13 @@ class UserController extends \BaseController {
 		//
 	}
 
+	public function getAppointments($id)
+	{
+		$response = array(
+    		'data'	=> User::findOrFail($id)->appointments->toArray()
+    	);
+
+		return Response::make($response, 200);
+	}
+
 }
