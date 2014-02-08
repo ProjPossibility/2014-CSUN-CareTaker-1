@@ -14,9 +14,10 @@ class CreateMedicationTable extends Migration {
 		 Schema::create('medications', function($table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
+            $table->string('name'); 
      	    $table->string('dosage');
-            $table->string('requirements');
-            $table->string('notes');
+            $table->string('requirements')->nullable();
+            $table->string('notes')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->softDeletes();
             $table->timestamps();
