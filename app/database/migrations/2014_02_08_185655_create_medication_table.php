@@ -30,7 +30,7 @@ class CreateMedicationTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('users');
+		Schema::drop('medications');
 	}
 
 }
