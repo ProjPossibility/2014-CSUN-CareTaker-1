@@ -9,7 +9,14 @@ class ContactController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
+		$contact = Contact::where("contact_for_user_id",Auth::user()->id)->get();
+	    $response = array(
+			'message' 		=> 'Your contacts list has been returned',
+			'data'			=> $contact->toArray(),
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
 	}
 
 	/**
