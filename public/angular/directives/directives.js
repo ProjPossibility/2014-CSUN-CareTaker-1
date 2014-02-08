@@ -27,3 +27,10 @@ angular.module('directives', [])
 		templateUrl: 'angular/directives/contacts.html'
 	}
 })
+.directive('appointments', function() {
+	return {
+		restrict: 'E',
+		replace: 'true',
+		templateUrl: 'angular/directives/appointments.html'
+	}
+})
