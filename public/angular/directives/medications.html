@@ -1,1 +1,25 @@
-<p>My meds</p>
+<div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Dosage</th>
+				<th>Requirements</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td ng-model="medication.name">Aderol</td>
+				<td ng-model="medication.dosage">100 mg</td>
+				<td ng-model="medication.requirements">
+					Take 1 pill every 12 hours by mouth as needed.
+				</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<button class="btn btn-primary" ng-click="addMed()">Add Medication</button>
+	<button class="btn btn-default" ng-click="edit = true">Edit All</button>
+	<button class="btn btn-success" ng-show="edit" 
+		ng-click="edit = false">Save Changes</button>
+</div>
