@@ -13,6 +13,8 @@
 Route::resource('api/v1/users', 'UserController');
 Route::resource('api/v1/medications', 'MedicationController');
 
+Route::get('api/v1/users/{id}/medications', 'UserController@getMedications');
+
 Route::get('/', 'HomeController@getIndex');
 Route::get('logout', 'HomeController@getLogout');
 Route::get('userinfo', 'HomeController@getUserInfo');

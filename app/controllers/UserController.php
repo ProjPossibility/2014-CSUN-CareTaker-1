@@ -64,4 +64,16 @@ class UserController extends \BaseController {
 		//
 	}
 
+	/**
+	 * Show user's medications
+	 *
+	 * @link api/v1/users/{id}/medications	GET
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function getMedications($id)
+	{
+		return User::with("medications")->findOrFail($id);
+	}
+
 }
