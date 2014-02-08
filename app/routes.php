@@ -11,6 +11,7 @@
 |
 */
 Route::resource('api/v1/users', 'UserController');
+Route::resource('api/v1/medications', 'MedicationController');
 
 Route::get('/', 'HomeController@getIndex');
 Route::get('logout', 'HomeController@getLogout');
