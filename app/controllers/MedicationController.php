@@ -5,6 +5,7 @@ class MedicationController extends \BaseController {
 	/**
 	 * Return all medications for the logged in user. 
 	 *
+	 * @link api/v1/medications	GET
 	 * @return Response
 	 */
 	public function index()
@@ -16,6 +17,7 @@ class MedicationController extends \BaseController {
 	/**
 	 * Store a newly created medication in storage.
 	 *
+	 * @link api/v1/medications	POST
 	 * @return Medication record
 	 */
 	public function store()
@@ -53,6 +55,7 @@ class MedicationController extends \BaseController {
 	/**
 	 * Display the specified resource.
 	 *
+	 * @link api/v1/medications/{id}	GET
 	 * @param  int  $id
 	 * @return Response
 	 */
@@ -64,6 +67,7 @@ class MedicationController extends \BaseController {
 	/**
 	 * Update the specified resource in storage.
 	 *
+	 * @link api/v1/medications/{id}	PUT
 	 * @param  int  $id
 	 * @return Response
 	 */
@@ -75,6 +79,7 @@ class MedicationController extends \BaseController {
 	/**
 	 * Remove the specified resource from storage.
 	 *
+	 * @link api/v1/medications/{id}	DELETE
 	 * @param  int  $id
 	 * @return Response
 	 */
