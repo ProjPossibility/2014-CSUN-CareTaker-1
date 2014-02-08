@@ -30,6 +30,12 @@ var app = angular
 					$rootScope.last_name = data.data.last_name;
 				}
 			});
+
+
+			$rootScope.weatherIntervalId = setInterval(function() {
+				$rootScope.getWeather();
+			}, 300000);//5 mins = 300,000 ms
+
 		}
 	]
 );
