@@ -7,6 +7,8 @@ var app = angular
 		'directives',
 		'factories.user_info',
 		'factories.users',
+		'factories.appointments',
+		'factories.medications',
 		'ui.bootstrap',
 		'ui.select2'
 	])
@@ -20,8 +22,8 @@ var app = angular
 				.otherwise(({redirectTo: '/'}))
 		}
 	])
-	.run(['$rootScope', 'UserInfo', 'Users', 
-		function ($rootScope, UserInfo, Users) {
+	.run(['$rootScope', 'UserInfo', 'Users', 'Appointments', 'Medications', 
+		function ($rootScope, UserInfo, Users, Appointments, Medications) {
 			UserInfo.get({}, function (data) {
 				if (!$rootScope.user_id) {
 					$rootScope.user_id = data.data.id;
@@ -29,6 +31,19 @@ var app = angular
 					$rootScope.first_name = data.data.first_name;
 					$rootScope.last_name = data.data.last_name;
 				}
+
+				Users.get({
+					'id': $rootScope.user_id,
+					'resource': 'appointments'
+				}, function (data) {
+					$rootScope.appointments = data.data;
+				});
+
+				Medications.get({},
+					function(data) {
+						$rootScope.medications = data.data;
+					}
+				)
 			});
 
 

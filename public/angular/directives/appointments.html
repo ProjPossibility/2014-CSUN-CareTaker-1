@@ -1,0 +1,16 @@
+<div>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Location</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="appointment in appointments">
+				<td ng-model="appointment.name">{{ appointment.name }}</td>
+				<td ng-model="appointment.locaiton">{{ appointment.location }}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>

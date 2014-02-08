@@ -1,1 +1,45 @@
-<p>Coming soon!</p>
+
+		<div>
+			<table class="table table-striped table-hover">
+				<thead>
+					<tr>
+						<th>Photo</th>
+						<th>Name</th>
+						<th>Phone</th>
+						<th>Email</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td ng-model="contacts.photo"></td>
+						<td ng-model="contacts.name">Daughter</td>
+						<td ng-model="contacts.phone">1-424-5555</td>
+						<td ng-model="contacts.email">daughter@gmail.com</td>
+					</tr>
+				</tbody>
+			</table>
+
+    <form ng-show="addContact">
+    	<div class="form-group">
+			<label for="contactName">Contact Name</label>
+				<input type="text" class="form-control" id="contactName" ng-model="contact.name" placeholder="John Doe">
+		</div>
+		<div class="form-group">
+			<label for="contactPhone">Contact Phone</label>
+				<input type="text" class="form-control" id="contactPhone" ng-model="contact.name" placeholder="1-424-5555">
+		</div>
+		<div class="form-group">
+			<label for="contactEmail">Contact Email</label>
+				<input type="text" class="form-control" id="contactEmail" ng-model="contact.email" placeholder="johndoe@gmail.com">
+		</div>
+		<div class="form-group">
+			<label for="contactPhoto">Contact Photo</label>
+				<input type="file" id="contactPhoto">
+		</div>
+	</form>
+
+	<button class="btn btn-primary" ng-click="addContact = true">Add Contact</button>
+	<button class="btn btn-default" ng-click="edit = true">Edit All</button>
+	<button class="btn btn-success" ng-show="edit" 
+			ng-click="edit = false; addContact = false;">Save Changes</button>
+</div>

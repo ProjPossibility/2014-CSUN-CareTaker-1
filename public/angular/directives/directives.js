@@ -17,6 +17,7 @@ angular.module('directives', [])
 	return {
 		restrict: 'E',
 		replace: 'true',
+		controller: 'MedicationsCtrl',
 		templateUrl: 'angular/directives/medications.html'
 	}
 })
@@ -33,5 +34,12 @@ angular.module('directives', [])
 		replace: 'true',
 		templateUrl: 'angular/directives/weather.html',
 		controller: 'WeatherCtrl'
+	}
+})
+.directive('appointments', function() {
+	return {
+		restrict: 'E',
+		replace: 'true',
+		templateUrl: 'angular/directives/appointments.html'
 	}
 })

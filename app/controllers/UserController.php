@@ -64,4 +64,39 @@ class UserController extends \BaseController {
 		//
 	}
 
+	/**
+	 * Show user's appointments
+	 *
+	 * @link api/v1/users/{id}/appointments	 GET
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function getAppointments($id)
+	{
+		$response = array(
+    		'data'	=> User::findOrFail($id)->appointments->toArray()
+    	);
+
+		return Response::make($response, 200);
+	}
+
+	/**
+	 * Show user's medications
+	 *
+	 * @link api/v1/users/{id}/medications	GET
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function getMedications($id)
+	{
+		/* Return Response */
+        $response = array(
+			'message' 		=> 'The user medication list successfully found',
+			'data'			=> User::with("medications")->findOrFail($id)->toArray(),
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
+	}
+
 }

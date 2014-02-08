@@ -1,1 +1,46 @@
-<p>My meds</p>
+<div>
+	<button class="btn btn-primary" ng-click="addMedForm = true">Add Medication</button>
+	<button class="btn btn-default" ng-click="edit = true">Edit All</button>
+	<button class="btn btn-success" ng-show="edit" 
+		ng-click="edit = false">Save Changes</button>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Dosage</th>
+				<th>Requirements</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="medication in medications">
+				<td>{{ medication.name }}</td>
+				<td>{{ medication.dosage }}</td>
+				<td>{{ medication.requirements }}</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<form role="form" ng-show="addMedForm">
+		<div class="form-group">
+			<label for="medicationName">Medication Name</label>
+			<input type="text" class="form-control" id="medicationName" 
+				ng-model="medication.name" 
+				placeholder="e.g. Lisinopril">
+		</div>
+		<div class="form-group">
+			<label for="medicationDosage">Dosage</label>
+			<input type="text" class="form-control" id="medicationDosage"
+				ng-model="medication.dosage" 
+				placeholder="e.g. 100 mg, 200 mg, etc.">
+		</div>
+		<label for="medicationRequirements">Requirements</label>
+		<textarea class="form-control" rows="3" 
+			id="medicationRequirements" 
+			ng-model="medication.requirements"
+			placeholder="e.g. Take 3 times with or without food."></textarea>
+
+		<button class="btn btn-success" ng-click="addMed(medication)">Add</button>
+		<button class="btn btn-default">Cancel</button>
+	</form>
+</div>
