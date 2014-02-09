@@ -26,7 +26,7 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-		 $userdata = Input::all();
+		$userdata = Input::all();
     
         $rules = array(
             'first_name'            => 'required|alpha',
@@ -40,7 +40,12 @@ class UserController extends \BaseController {
 
         if ($validator->fails())
         {
-           return $validator->messages();
+            $response = array(
+				'message' 		=> 'The user could not need added',
+				'data'			=> $validator->messages()->toArray(),
+				'status' 	 	=> 400       
+			);
+			return Response::make($response, 400);
 		}
 
         $user = new User();
