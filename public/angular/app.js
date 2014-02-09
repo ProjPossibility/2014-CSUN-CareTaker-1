@@ -66,6 +66,7 @@ var app = angular
 					$rootScope.email = data.data.email;
 					$rootScope.first_name = data.data.first_name;
 					$rootScope.last_name = data.data.last_name;
+					$rootScope.opt_in = data.data.opt_in;
 				}
 
 				Users.get({
@@ -87,16 +88,6 @@ var app = angular
 				});
 			});
 
-			$http.get("http://localhost:8888/carefree/public/api/v1/notifications")
-			.success(function(data, status){
-				$rootScope.notifications = $rootScope.notifications.concat(data.data).filter(function(e){
-					return e.resources_type_id != 2;
-				});
-			})
-			.error(function(data, status){
-				console.log("ERROR: Failed to retrieve notifications");
-			});
-
 			$rootScope.weatherIconUrl = "img/default.png";
 
 			/*
@@ -113,7 +104,7 @@ var app = angular
 			*/
 			$rootScope.getWeather = function(){
 
-			   var tempLowExtreme = 60, tempHighExtreme = 70;
+			   var tempLowExtreme = 0, tempHighExtreme = 10;
 
 			   var getWeatherData = function(position){
 
@@ -130,22 +121,24 @@ var app = angular
 			         if($rootScope.temperature < tempLowExtreme){
 			            //Warning - low temp
 			            $rootScope.notifications.push({
-			               title: "Warning: Low Temperature",
+			               title: "Low Temperature",
 			               notification: "Wear a coat. The temperature is low outside.",
 			               severity_id: 2,
-			               resources_type_id: 2
+			               resources_type_id: 2,
+			               severity: {
+			               	title: "Warning"
+			               }
 			            });
 
-			            $http.post("http://localhost:8888/carefree/public/api/v1/notifications",
-				            {
-				               title: "Warning: Low Temperature",
-				               notification: "Wear a coat. The temperature is low outside.",
-				               severity_id: 2,
-				               resources_type_id: 2
-				            }
-			            );
+							Notifications.post({
+      	               title: "Low Temperature",
+      	               notification: "Wear a coat. The temperature is low outside.",
+      	               severity_id: 2,
+      	               resources_type_id: 2
+			            }, function(data){});
+
 			         }
-			         if($rootScope.temperature > tempHighExtreme){
+			         else if($rootScope.temperature > tempHighExtreme){
 			            //Warning - high temp
 			            $rootScope.notifications.push({
 			               title: "Warning: High Temperature",
@@ -154,14 +147,14 @@ var app = angular
 			               resources_type_id: 2
 			            });
 
-                     $http.post("http://localhost:8888/carefree/public/api/v1/notifications",
-         	            {
-         	               title: "Warning: High Temperature",
-         	               notification: "Stay hydrated. The temperature is high outside.",
-         	               severity_id: 2,
-         	               resources_type_id: 2
-         	            }
-                     );
+							Notifications.post({
+      	               title: "High Temperature",
+      	               notification: "Stay hydrated. The temperature is high outside.",
+      	               severity_id: 2,
+      	               resources_type_id: 2
+			            }, function(data){});
+
+				
 			         }
 
 			         for(var i = $rootScope.notifications.length-2; i >= 0; i--){
@@ -210,18 +203,21 @@ var app = angular
 			      navigator.geolocation.getCurrentPosition(getWeatherData);
 			   }
 			   else{
-			     //Geolocation is not supported by this browser.
+			     console.log("Geolocation is not supported by this browser.");
 			   }      
 			} 
 
 			//Wait for WeatherCtrl to load up $rootScope.getWeather function
-			$rootScope.getWeather();
+			if($rootScope.opt_in == 1){
+				$rootScope.getWeather();
+			}
 
 			//Update the weather information every x ms
 			$rootScope.weatherIntervalId = setInterval(function() {
-				$rootScope.getWeather();
-			}, 120000);//5 mins = 300,000 ms
-
+				if($rootScope.opt_in == 1){
+					$rootScope.getWeather();
+				}
+			}, 5000);//5 mins = 300,000 ms
 
 
 

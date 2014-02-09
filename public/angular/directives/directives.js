@@ -72,10 +72,10 @@ angular.module('directives', [])
 		replace: true,
 		controller: function($scope, $rootScope, Notifications) {
 
-			$scope.toggleReminder = function(reminder)
+			$scope.toggleNotification = function(notification)
 			{
 				Notifications.put({
-					'id': reminder.id
+					'id': notification.id
 				}, function (data) {
 					//
 				});
@@ -85,8 +85,8 @@ angular.module('directives', [])
 			{
 				var count = 0;
 				
-				angular.forEach($scope.notifications, function (reminder) {
-			  		count += reminder.done == 1 ? 0 : 1;
+				angular.forEach($scope.notifications, function (notification) {
+			  		count += notification.done == 1 ? 0 : 1;
 				});
 				
 				return count;
@@ -94,15 +94,15 @@ angular.module('directives', [])
 
 			$scope.archive = function()
 			{
-				var oldTodos = $scope.notifications;
+				var oldNotification = $scope.notifications;
 				
 				$scope.notifications = [];
 				
-				angular.forEach(oldTodos, function (reminder) {
-			  		if (reminder.done == 0) $scope.notifications.push(reminder);
+				angular.forEach(oldNotification, function (notification) {
+			  		if (notification.done == 0) $scope.notifications.push(notification);
 			  		else {
 			  			Notifications.delete({
-			  				'id': reminder.id
+			  				'id': notification.id
 			  			}, function (data) {
 			  				//
 			  			});
