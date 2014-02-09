@@ -8,10 +8,17 @@ app.controller("WeatherCtrl", function ($scope, $rootScope, $http) {
    var lat = undefined;
    var lon = undefined;
 
+   $scope.weatherDescription = undefined;
+
+   $rootScope.weatherIconUrl = "img/default.png";
+   $rootScope.weatherData = undefined;
    /*
       Have some hard coded JSON data from the "API" that would
       cause alerts (i.e Heavy Rain, Flaming hot, tornadoe?)
    */
+
+   var target = document.getElementById("weather-spinner");
+   $scope.spinner = new Spinner().spin(target);
 
    //Put this into rootScope?
    $rootScope.getWeather = function(){
@@ -20,9 +27,6 @@ app.controller("WeatherCtrl", function ($scope, $rootScope, $http) {
 
          lat = position.coords.latitude.toFixed(2);
          lon = position.coords.longitude.toFixed(2);
-
-         // console.log("Lat: " + lat);
-         // console.log("Lon: " + lon + "\n");
 
          $http({
             method: "GET",
@@ -41,20 +45,32 @@ app.controller("WeatherCtrl", function ($scope, $rootScope, $http) {
                return a.id < b.id;
             });
 
-            $rootScope.weatherIcon = undefined;
+
+            var weatherIconUrl = "http://openweathermap.org/img/w/";
+            var weatherIcon = undefined;
             for(var i=0; i<weatherList.length; i++){
                if(weatherList[i].icon !== undefined){
-                  $rootScope.weatherIcon = weatherList[i].icon;
+                  weatherIcon = weatherList[i].icon;
+                  $scope.weatherDescription = weatherList[i].description;
+                  break;
                }
             }
 
-            if($rootScope.weatherIcon === undefined){
-               $rootScope.weatherIcon = "default";
+            if(weatherIcon === undefined){
+               $rootScope.weatherIconUrl = "img/default.png";
+            }
+            else{
+               weatherIconUrl += weatherIcon + ".png";
+               $rootScope.weatherIconUrl = weatherIconUrl;
             }
 
+            $scope.spinner.stop();
          })
          .error(function(data, status){
             console.log("ERROR! Status: " + status);
+            
+            $scope.spinner.stop();
+
          });
       }
 
@@ -64,18 +80,7 @@ app.controller("WeatherCtrl", function ($scope, $rootScope, $http) {
       else{
         //Geolocation is not supported by this browser.
       }      
-   }
-
-   //Call getLocation every 5ish mins? Look into using setInterval.
-   //Also save the id returned from setInterval to clear the interval
-
-   // $rootScope.getWeather();
-
-   /*
-      Sort weather array in decending order, then pick the first
-      object that has the icon property set
-   */
-      
+   }      
 });
 
 
