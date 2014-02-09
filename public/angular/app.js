@@ -113,7 +113,6 @@ var app = angular
 
 			      $http.get("http://api.openweathermap.org/data/2.5/weather?"+"lat="+lat+"&lon="+lon)
 			      .success(function(data, status){
-			         console.log("SUCCESS! Status: " + status);
 			         $rootScope.weatherData = data;
 
 			         //Might not need $rS.temp. Can calc in {{}} in html?
@@ -192,7 +191,6 @@ var app = angular
 			         }
 
 			         $rootScope.spinner.stop();
-			         console.log('GOT WEATHER!');
 			      })
 			      .error(function(data, status){
 			         console.log("ERROR! Status: " + status);
