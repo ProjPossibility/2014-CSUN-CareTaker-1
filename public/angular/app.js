@@ -21,6 +21,24 @@ var app = angular
 					templateUrl: 'angular/partials/home.html',
 					controller: 'HomeCtrl'
 				})
+				.when('/medications', {
+					templateUrl: 'angular/directives/medications.html'
+				})
+				.when('/calendar', {
+					templateUrl: 'angular/directives/calendar.html',
+					controller: 'CalendarCtrl'
+				})
+				.when('/appointments', {
+					templateUrl: 'angular/directives/appointments.html'
+				})
+				.when('/contacts', {
+					templateUrl: 'angular/directives/contacts.html',
+					controller: 'ContactsCtrl'
+				})
+				.when('/weather', {
+					templateUrl: 'angular/directives/weather.html',
+					controller: 'WeatherCtrl'
+				})
 				.when('/add-medication', {
 					templateUrl: 'angular/partials/add_medication.html',
 					controller: 'MedicationsCtrl'
