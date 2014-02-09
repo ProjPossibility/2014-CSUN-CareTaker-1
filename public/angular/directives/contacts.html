@@ -19,14 +19,15 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr ng-repeat="contact in contacts" ng-hide="edit">
-						<td>{{ contacts.photo }}</td>
-						<td>{{ contacts.first_name }}</td>
-						<td>{{ contacts.last_name }}</td>
-						<td>{{ contacts.phone }}</td>
-						<td>{{ contacts.email }}</td>
+					<tr ng-repeat="contact in contacts">
+						<td>{{ contact.photo }}</td>
+						<td>{{ contact.user.first_name }}</td>
+						<td>{{ contact.user.last_name }}</td>
+						<td>{{ contact.user.phone }}</td>
+						<td>{{ contact.user.email }}</td>
 					</tr>
 					<tr ng-repeat="contact in contacts" ng-show="edit">
+						<td><input type="file" class="form-control" ng-model="contact.photo"></td>
 						<td><input type="text" class="form-control" ng-model="contact.first_name"></td>
 						<td><input type="text" class="form-control" ng-model="contact.last_name"></td>
 						<td><input type="text" class="form-control" ng-model="contact.phone"></td>
@@ -38,23 +39,23 @@
     <form role="form" ng-show="addContactForm">
     	<div class="form-group">
 			<label for="contactFirstName">Contact First Name</label>
-				<input type="text" class="form-control" id="first_name" ng-model="contact.first_name" placeholder="John">
+			<input type="text" class="form-control" id="first_name" ng-model="contact.first_name" placeholder="John">
 		</div>
 		<div class="form-group">
 			<label for="contactLastName">Contact Last Name</label>
-				<input type="text" class="form-control" id="last_name" ng-model="contact.last_name" placeholder="Doe">
+			<input type="text" class="form-control" id="last_name" ng-model="contact.last_name" placeholder="Doe">
 		</div>
 		<div class="form-group">
 			<label for="contactPhone">Contact Phone</label>
-				<input type="text" class="form-control" id="phone_number" ng-model="contact.phone_number" placeholder="1-424-5555">
+			<input type="text" class="form-control" id="phone_number" ng-model="contact.phone_number" placeholder="1-424-5555">
 		</div>
 		<div class="form-group">
 			<label for="contactEmail">Contact Email</label>
-				<input type="text" class="form-control" id="contactEmail" ng-model="contact.email" placeholder="johndoe@gmail.com">
+			<input type="text" class="form-control" id="contactEmail" ng-model="contact.email" placeholder="johndoe@gmail.com">
 		</div>
 		<div class="form-group">
 			<label for="contactPhoto">Contact Photo</label>
-				<input type="file" id="contactPhoto">
+			<input type="file" id="contactPhoto">
 		</div>
 	
 	<button class="btn btn-success" 
