@@ -126,6 +126,14 @@ class MedicationController extends \BaseController {
 	{
 		$medication = Medication::where('user_id',Auth::user()->id)->findOrFail($id);
 		$medication->delete();
+
+		/* Return Response */
+        $response = array(
+			'message' 		=> 'The medication has been been deleted',
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
 	}
 
 }
