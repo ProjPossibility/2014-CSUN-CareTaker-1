@@ -130,4 +130,27 @@ class UserController extends \BaseController {
 		return Response::make($response, 200);
 	}
 
+	/**
+	 * Show user's notifications
+	 *
+	 * @link api/v1/users/{id}/notifications	GET
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function getNotifications($id)
+	{	
+		$data = User::
+			with(array('notifications.severity','notifications.notificationtype'))
+			->findOrFail($id);
+
+		/* Return Response */
+        $response = array(
+			'message' 		=> 'The user notifications successfully found',
+			'data'			=> $data->toArray(),
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
+	}
+
 }
