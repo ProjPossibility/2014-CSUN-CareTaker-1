@@ -25,6 +25,7 @@ angular.module('directives', [])
 	return {
 		restrict: 'E',
 		replace: 'true',
+		controller: 'ContactsCtrl',
 		templateUrl: 'angular/directives/contacts.html'
 	}
 })
@@ -50,7 +51,11 @@ angular.module('directives', [])
 		templateUrl: 'angular/directives/notifications.html'
 	}
 })
-
-
-
-
+.directive('calendar', function() {
+	return {
+		restrict: 'E',
+		replace: 'true',
+		templateUrl: 'angular/directives/calendar.html',
+		controller: 'CalendarCtrl'
+	}
+})

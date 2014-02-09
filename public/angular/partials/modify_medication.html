@@ -1,0 +1,26 @@
+<form role="form">
+	<div class="form-group">
+		<label for="updatedMedName">Medication Name</label>
+		<input type="text" class="form-control" id="updatedMedName"
+			ng-model="medication.name">
+	</div>
+	<div class="form-group">
+		<label for="updatedMedDosage">Dosage</label>
+		<input type="text" class="form-control" id="updatedMedDosage"
+			ng-model="medication.dosage">
+	</div>
+	<label for="updatedMedReqs">Requirements</label>
+	<textarea class="form-control" rows="3"
+		id="updatedMedReqs"
+		ng-model="medication.requirements">
+	</textarea>
+	<label for="updatedMedNotes">Notes</label>
+	<textarea class="form-control" rows="3"
+		id="updatedMedNotes"
+		ng-model="medication.notes">
+	</textarea>
+</form>
+
+<br/>
+<button class="btn btn-primary btn-lg" ng-click="updateMed(medication)">Save</button>
+<a href="#/" class="btn btn-default btn-lg">Cancel</a>
