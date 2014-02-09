@@ -10,6 +10,7 @@ var app = angular
 		'factories.appointments',
 		'factories.medications',
 		'ui.bootstrap',
+		'ui.calendar',
 		'ui.select2'
 	])
 	.config(['$routeProvider', 

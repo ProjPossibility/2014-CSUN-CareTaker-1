@@ -45,7 +45,9 @@ angular.module('ui.calendar', [])
       };
 
       this.sourcesFingerprint = function(source) {
-          return source.__id || (source.__id = sourceSerialId++);
+          if (source) {
+            return source.__id || (source.__id = sourceSerialId++);
+          }
       };
 
       this.allEvents = function() {
