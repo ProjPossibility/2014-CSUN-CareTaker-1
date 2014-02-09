@@ -5,8 +5,10 @@ which can be found at http://openweathermap.org/
 
 app.controller("WeatherCtrl", function ($scope, $rootScope, $http) {
 
-   var lat = undefined;
-   var lon = undefined;
+   var lat = undefined, lon = undefined;
+   var tempLowExtreme = 60, tempHighExtreme = 70;
+
+
 
    $scope.weatherDescription = undefined;
 
@@ -39,6 +41,21 @@ app.controller("WeatherCtrl", function ($scope, $rootScope, $http) {
 
             //Might not need $rS.temp. Can calc in {{}} in html?
             $rootScope.temperature = parseInt(1.8*(data.main.temp - 273.15)+32);
+            if($rootScope.temperature < tempLowExtreme){
+               //Warning - low temp
+               $rootScope.notifications.push({
+                  title: "Warning: Low Temperature",
+                  message: "WEAR A GOD DAMN COAT!"
+               });
+            }
+            if($rootScope.temperature > tempHighExtreme){
+               //Warning - high temp
+               $rootScope.notifications.push({
+                  title: "Warning: High Temperature",
+                  message: "IT'S SO HOT OUTSIDE OH MY GOD!"
+               });
+            }
+
 
             var weatherList = data.weather;
             weatherList = weatherList.sort(function(a, b){
@@ -82,6 +99,10 @@ app.controller("WeatherCtrl", function ($scope, $rootScope, $http) {
       }      
    }      
 });
+
+
+
+
 
 
 
