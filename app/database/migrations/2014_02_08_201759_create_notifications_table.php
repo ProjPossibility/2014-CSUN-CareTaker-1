@@ -16,11 +16,11 @@ class CreateNotificationsTable extends Migration {
             $table->increments('id');
 		   	$table->string('title');
 		   	$table->string('notification');	
+		   	$table->integer('user_id')->unsigned();	
+		   	$table->foreign('user_id')->references('id')->on('users');
 		   	$table->integer('severity_id')->unsigned();
 			$table->integer('resources_type_id')->unsigned();
 			$table->integer('resource_id')->unsigned();
-			$table->integer('created_by')->unsigned();
-		   	$table->foreign('created_by')->references('id')->on('users');
 		    $table->boolean('is_active')->default(1);
 		    $table->softDeletes();
 		    $table->timestamps();
