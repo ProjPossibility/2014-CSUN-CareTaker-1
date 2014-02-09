@@ -50,8 +50,8 @@ var app = angular
 				.otherwise(({redirectTo: '/'}))
 		}
 	])
-	.run(['$rootScope', 'UserInfo', 'Users', 'Appointments', 'Medications', 
-		function ($rootScope, UserInfo, Users, Appointments, Medications) {
+	.run(['$rootScope', '$http', 'UserInfo', 'Users', 'Appointments', 'Medications', 
+		function ($rootScope, $http, UserInfo, Users, Appointments, Medications) {
 			UserInfo.get({}, function (data) {
 				if (!$rootScope.user_id) {
 					$rootScope.user_id = data.data.id;
