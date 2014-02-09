@@ -10,7 +10,11 @@ class MedicationController extends \BaseController {
 	 */
 	public function index()
 	{
-		$medication = Medication::where("user_id",Auth::user()->id)->get();
+		$medication = Medication::
+			with("medlist_info")
+			->where("user_id",Auth::user()->id)
+			->get();
+
 	    $response = array(
 			'message' 		=> 'The medication has been successfully found',
 			'data'			=> $medication->toArray(),
@@ -66,7 +70,10 @@ class MedicationController extends \BaseController {
 	public function show($id)
 	{	
 
-		$medication = Medication::where('user_id',Auth::user()->id)->findOrFail($id);
+		$medication = Medication::
+			with("medlist_info")
+			->where('user_id',Auth::user()->id)
+			->findOrFail($id);
 
 		/* Return Response */
         $response = array(

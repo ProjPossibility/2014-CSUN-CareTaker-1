@@ -25,6 +25,12 @@ class CreateMedicationListTable extends Migration {
 			$table->softDeletes();
 			$table->timestamps();
 		});
+
+		/* Add med-list contraints */
+		Schema::table('medications', function($t) {
+        	$t->integer('medlist_id')->unsigned()->nullable();
+        	$t->foreign('medlist_id')->references('id')->on('medication_list');
+        });
 	}
 
 	/**
@@ -33,7 +39,13 @@ class CreateMedicationListTable extends Migration {
 	 * @return void
 	 */
 	public function down()
-	{
+	{	
+		/* Remove med-list contraints */
+		Schema::table('medications', function($t) {
+        	$t->dropForeign('medications_medlist_id_foreign');
+        	$t->dropColumn('medlist_id');
+        });
+
 		Schema::drop('medication_list');
 	}
 
