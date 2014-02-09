@@ -28,10 +28,26 @@ angular.module('directives', [])
 		templateUrl: 'angular/directives/contacts.html'
 	}
 })
+.directive('weather', function(){
+	return {
+		restrict: 'E',
+		replace: 'true',
+		templateUrl: 'angular/directives/weather.html',
+		controller: 'WeatherCtrl'
+	}
+})
 .directive('appointments', function() {
 	return {
 		restrict: 'E',
 		replace: 'true',
 		templateUrl: 'angular/directives/appointments.html'
+	}
+})
+.directive('calendar', function() {
+	return {
+		restrict: 'E',
+		replace: 'true',
+		templateUrl: 'angular/directives/calendar.html',
+		controller: 'CalendarCtrl'
 	}
 })
