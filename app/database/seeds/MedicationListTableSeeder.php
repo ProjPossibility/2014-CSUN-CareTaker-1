@@ -176,49 +176,49 @@ class MedicationListTableSeeder extends Seeder {
 			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: slow/shallow breathing, extreme drowsiness, severe stomach pain, vomit that looks like coffee grounds.'
 		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Naproxen',
+			'dosage'		=> '250 mg',
+			'warnings'		=> 'Nonsteroidal anti-inflammatory drugs (including naproxen) may rarely increase the risk for a heart attack or stroke. The risk may be greater if you have heart disease or increased risk for heart disease (for example, due to smoking, family history of heart disease, or conditions such as high blood pressure or diabetes), or with longer use. This drug should not be taken right before or after heart bypass surgery (CABG).',
+			'uses'			=> 'Naproxen is used to relieve pain from various conditions such as headaches, muscle aches, tendonitis, dental pain, and menstrual cramps. It also reduces pain, swelling, and joint stiffness caused by arthritis, bursitis, and gout attacks. This medication is known as a nonsteroidal anti-inflammatory drug (NSAID). It works by blocking your body\'s production of certain natural substances that cause inflammation.',
+			'side_effects'	=> 'Upset stomach, nausea, heartburn, headache, drowsiness, or dizziness',
+			'precautions'	=> 'Before taking naproxen, tell your doctor or pharmacist if you are allergic to it; or to aspirin or other NSAIDs (such as ibuprofen, celecoxib); or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
+			'interactions'	=> 'aliskiren, captopril, lisinopril, losartan, valsartan, cidofovir, corticosteroids, lithium',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe stomach pain, extreme drowsiness, seizures.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Neurtontin',
+			'dosage'		=> '600 mg',
+			'warnings'		=> 'N/A',
+			'uses'			=> 'Gabapentin is used with other medications to prevent and control seizures. It is also used to relieve nerve pain following shingles (a painful rash due to herpes zoster infection) in adults. Gabapentin is known as an anticonvulsant or antiepileptic drug.',
+			'side_effects'	=> 'Drowsiness, dizziness, loss of coordination, tiredness, blurred/double vision, unusual eye movements, or shaking (tremor)',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: kidney disease, mental/mood problems (such as depression, thoughts of suicide), use/abuse of drugs/alcohol.',
+			'interactions'	=> 'alcohol, cetirizine, diphenhydramine, alprazolam, diazepam, zolpidem, codeine, morphine',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, slurred speech, weakness.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Prednisone',
+			'dosage'		=> '1 mg',
+			'warnings'		=> 'N/A',
+			'uses'			=> 'Prednisone is used to treat conditions such as arthritis, blood disorders, breathing problems, severe allergies, skin diseases, cancer, eye problems, and immune system disorders. Prednisone belongs to a class of drugs known as corticosteroids. It decreases your immune system\'s response to various diseases to reduce symptoms such as swelling and allergic-type reactions.',
+			'side_effects'	=> 'Nausea, vomiting, loss of appetite, heartburn, trouble sleeping, increased sweating, or acne',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: current/past infections (such as fungal infections, tuberculosis, herpes), heart problems (such as heart failure, recent heart attack), high blood pressure, thyroid problems, kidney disease, liver disease, stomach/intestinal problems (such as ulcer, diverticulitis), bone loss (osteoporosis), mental/mood disorders (such as psychosis, anxiety, depression), eye diseases (such as cataracts, glaucoma), diabetes, mineral imbalance (such as low level of potassium/calcium in the blood), seizures, blood clots, bleeding problems.',
+			'interactions'	=> 'aldesleukin, mifepristone, clopidogrel, warfarin, dabigatran, aspirin, celecoxib, ibuprofen',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Prilosec',
+			'dosage'		=> '2.5 mg',
+			'warnings'		=> 'N/A',
+			'uses'			=> 'Omeprazole is used to treat certain stomach and esophagus problems (such as acid reflux, ulcers). It works by decreasing the amount of acid your stomach makes. It relieves symptoms such as heartburn, difficulty swallowing, and persistent cough. This medication helps heal acid damage to the stomach and esophagus, helps prevent ulcers, and may help prevent cancer of the esophagus. Omeprazole belongs to a class of drugs known as proton pump inhibitors (PPIs).',
+			'side_effects'	=> 'Headache or abdominal pain',
+			'precautions'	=> 'Some symptoms may actually be signs of a more serious condition. Tell your doctor immediately if you have: heartburn with lightheadedness/sweating/dizziness, chest pain or shoulder pain (especially with trouble breathing, sweating, lightheadedness, pain spreading to arms/jaw/neck/shoulders), unexplained weight loss.',
+			'interactions'	=> 'cilostazol, clopidogrel, methotrexate, rifampin, warfarin',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: confusion, unusual sweating, blurred vision, unusually fast heartbeat.'
+		));
 
 		// MedicationList::create(array(
 		// 	'name'			=> '',
