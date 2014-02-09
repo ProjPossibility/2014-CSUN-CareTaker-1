@@ -10,7 +10,7 @@
 		</thead>
 		<tbody>
 			<tr ng-repeat="appointment in appointments">
-				<td ng-model="appointment.created_at">{{ checkDate(appointment.created_at) }}</td>
+				<td ng-model="appointment.created_at">{{ checkAppointmentDate(appointment.created_at) }}</td>
 				<td ng-model="appointment.name">{{ appointment.name }}</td>
 				<td ng-model="appointment.location">{{ appointment.location }}</td>
 			</tr>
