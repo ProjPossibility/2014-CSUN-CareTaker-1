@@ -1,13 +1,13 @@
 angular.module('factories.contacts', ['ngResource'])
 	.factory('Contacts', function ($resource) {
-		return $resource('api/v1/medications/:id',
+		return $resource('api/v1/medications',
 			{},
 			{
 				get: {
-					method: 'GET',
-					params: {
-						'id': '@id',
-					}
+					method: 'GET'
+				},
+				add: {
+					method: 'POST'
 				}
 			}
 		);
