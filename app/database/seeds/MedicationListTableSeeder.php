@@ -235,114 +235,114 @@ class MedicationListTableSeeder extends Seeder {
 			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: confusion, unusual sweating, blurred vision, unusually fast heartbeat.'
 		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Prozac',
+			'dosage'		=> '60 mg',
+			'warnings'		=> 'Antidepressant medications are used to treat a variety of conditions, including depression and other mental/mood disorders. These medications can help prevent suicidal thoughts/attempts and provide other important benefits. However, studies have shown that a small number of people (especially people younger than 25) who take antidepressants for any condition may experience worsening depression, other mental/mood symptoms, or suicidal thoughts/attempts. Therefore, it is very important to talk with the doctor about the risks and benefits of antidepressant medication (especially for people younger than 25), even if treatment is not for a mental/mood condition.',
+			'uses'			=> 'Fluoxetine is used to treat depression, panic attacks, obsessive compulsive disorder, a certain eating disorder (bulimia), and a severe form of premenstrual syndrome (premenstrual dysphoric disorder).',
+			'side_effects'	=> 'Nausea, drowsiness, dizziness, anxiety, trouble sleeping, loss of appetite, tiredness, sweating, or yawning',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: personal or family history of bipolar/manic-depressive disorder, personal or family history of suicide attempts, liver problems, diabetes, low sodium in the blood (such as may occur while taking "water pills" - diuretics), severe loss of body water (dehydration), seizures, stomach/intestinal ulcers, glaucoma.',
+			'interactions'	=> 'carbamazepine, vinblastine, propafenone, flecainide, desipramine, imipramine, clopidogrel, ibuprofen, warfarin.',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, fainting.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Seroquel',
+			'dosage'		=> '20 mg',
+			'warnings'		=> 'There may be a slightly increased risk of serious, possibly fatal side effects (such as stroke, heart failure, fast/irregular heartbeat, pneumonia) when this medication is used by older adults with dementia. This medication is not approved for the treatment of dementia-related behavior problems. Discuss the risks and benefits of this medication, as well as other effective and possibly safer treatments for dementia-related behavior problems, with the doctor.',
+			'uses'			=> 'This medication is used to treat certain mental/mood conditions (such as schizophrenia, bipolar disorder, sudden episodes of mania or depression associated with bipolar disorder). Quetiapine is known as an anti-psychotic drug (atypical type). It works by helping to restore the balance of certain natural substances (neurotransmitters) in the brain.',
+			'side_effects'	=> 'Constipation, drowsiness, upset stomach, tiredness, weight gain, blurred vision, or dry mouth',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: eye cataracts, liver disease, low white blood cell count (including history of low white blood cell count caused by medications), seizure disorder, trouble swallowing, thyroid problems, stomach/intestinal blockage (such as severe constipation, bowel obstruction), stomach/intestines that are not moving (such as ileus).',
+			'interactions'	=> 'amiodarone, moxifloxacin, procainamide, quinidine, sotalol, thioridazine',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, loss of consciousness.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Synthroid',
+			'dosage'		=> '25 mcg',
+			'warnings'		=> 'This medication should not be used for weight loss. Normal doses of this medication will not work for weight loss, and large doses of this medication may cause serious, possibly fatal side effects, especially when taken with diet pills.',
+			'uses'			=> 'Levothyroxine is used to treat an underactive thyroid (hypothyroidism). It replaces or provides more thyroid hormone, which is normally produced by the thyroid gland. Low thyroid hormone levels can occur naturally or when the thyroid gland is injured by radiation/medications or removed by surgery. Having enough thyroid hormone is important for maintaining normal mental and physical activity. In children, having enough thyroid hormone is important for normal mental and physical development.',
+			'side_effects'	=> 'Hair loss may occur during the first few months of treatment. This effect is usually temporary as your body adjusts to this medication. If this effect persists or worsens, tell your doctor or pharmacist promptly.',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: increased thyroid hormones (thyrotoxicosis), decreased adrenal gland function, heart disease (such as coronary artery disease, irregular heartbeat), high blood pressure, diabetes.',
+			'interactions'	=> 'digoxin, theophylline, warfarin',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: fast/pounding/irregular heartbeat, loss of consciousness, confusion, seizures.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Tramadol',
+			'dosage'		=> '50 mg',
+			'warnings'		=> 'N/A',
+			'uses'			=> 'This medication is used to help relieve moderate to moderately severe pain. Tramadol is similar to narcotic analgesics. It works in the brain to change how your body feels and responds to pain.',
+			'side_effects'	=> 'Nausea, vomiting, constipation, lightheadedness, dizziness, drowsiness, or headache',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: brain disorders (such as head injury, tumor, seizures), breathing problems (such as asthma, sleep apnea, chronic obstructive pulmonary disease-COPD), kidney disease, liver disease, mental/mood disorders (such as confusion, depression, suicidal thoughts), personal or family history of regular use/abuse of drugs/alcohol, stomach/intestinal problems (such as blockage, constipation, diarrhea due to infection, paralytic ileus), difficulty urinating (such as due to enlarged prostate), gallbladder disease, disease of the pancreas (pancreatitis).',
+			'interactions'	=> 'pentazocine, nalbuphine, butorphanol, naltrexone',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: slow breathing, slow/irregular heartbeat, loss of consciousness, seizure.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Trazodone',
+			'dosage'		=> '50 mg',
+			'warnings'		=> 'Antidepressant medications are used to treat a variety of conditions, including depression and other mental/mood disorders. These medications can help prevent suicidal thoughts/attempts and provide other important benefits. However, studies have shown that a small number of people (especially people younger than 25) who take antidepressants for any condition may experience worsening depression, other mental/mood symptoms, or suicidal thoughts/attempts. Therefore, it is very important to talk with the doctor about the risks and benefits of antidepressant medication (especially for people younger than 25), even if treatment is not for a mental/mood condition.',
+			'uses'			=> 'This medication is used to treat depression. It may help to improve your mood, appetite, and energy level as well as decrease anxiety and insomnia related to depression. Trazodone works by helping to restore the balance of a certain natural chemical (serotonin) in the brain.',
+			'side_effects'	=> 'Nausea, vomiting, diarrhea, drowsiness, dizziness, tiredness, blurred vision, changes in weight, headache, muscle ache/pain, dry mouth, bad taste in the mouth, stuffy nose, constipation, or change in sexual interest/ability',
+			'precautions'	=> 'This medication should not be used if you have certain medical conditions. Before using this medicine, consult your doctor or pharmacist if you have: history of priapism from taking trazodone, recent heart attack.',
+			'interactions'	=> 'amitriptyline, nefazodone, digoxin, ketoconazole, itraconazole, atazanavir, indinavir, ritonavir',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: painful/prolonged erection, slow/rapid/irregular heartbeat, unusual drowsiness, unusual dizziness, vomiting, trouble breathing, seizures.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Vicodin',
+			'dosage'		=> '300 mg',
+			'warnings'		=> 'One ingredient in this product is acetaminophen. Taking too much acetaminophen may cause serious (possibly fatal) liver disease. Adults should not take more than 4000 milligrams (4 grams) of acetaminophen a day. If you have liver problems, consult your doctor or pharmacist for a safe dosage of this medication. Daily use of alcohol, especially when combined with acetaminophen, may increase your risk for liver damage. Avoid alcohol. Check with your doctor or pharmacist for more information. Get medical help right away if you have any symptoms of liver damage, including: dark urine, persistent nausea/vomiting, stomach/abdominal pain, extreme tiredness, or yellowing eyes/skin.',
+			'uses'			=> 'This combination medication is used to relieve moderate to severe pain. It contains a narcotic pain reliever (hydrocodone) and a non-narcotic pain reliever (acetaminophen). Hydrocodone works in the brain to change how your body feels and responds to pain. Acetaminophen can also reduce a fever.',
+			'side_effects'	=> 'Nausea, vomiting, constipation, lightheadedness, dizziness, or drowsiness',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: brain disorders (such as head injury, tumor, seizures), breathing problems (such as asthma, sleep apnea, chronic obstructive pulmonary disease-COPD), kidney disease, liver disease, mental/mood disorders (such as confusion, depression), personal or family history of regular use/abuse of drugs/alcohol, stomach/intestinal problems (such as blockage, constipation, diarrhea due to infection, paralytic ileus), difficulty urinating (such as due to enlarged prostate), gallbladder disease, disease of the pancreas (pancreatitis).',
+			'interactions'	=> 'pentazocine, nalbuphine, butorphanol, ketoconazole, naltrexone, isocarboxazid, linezolid, methylene blue, moclobemide, phenelzine, procarbazine, rasagiline, selegiline, tranylcypromine',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: nausea, vomiting, unusual sweating, slow breathing, slow heartbeat, loss of consciousness.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Wellbutrin',
+			'dosage'		=> '150 mg',
+			'warnings'		=> 'Bupropion is an antidepressant used for smoking cessation and to treat a variety of conditions, including depression and other mental/mood disorders. Antidepressants can help prevent suicidal thoughts/attempts and provide other important benefits. However, a small number of people (especially people younger than 25) who take antidepressants for any condition may experience new or worsening depression, other mental/mood symptoms, or suicidal thoughts/attempts. Therefore, it is very important to talk with the doctor about the risks and benefits of antidepressant medication, even if treatment is not for a mental/mood condition.',
+			'uses'			=> 'This medication is used to treat depression. It may also be used to prevent seasonal affective disorder (SAD), a type of depression that occurs each year at the same time (for example, during winter). This medication can improve your mood and feelings of well-being. It may work by restoring the balance of certain natural substances (dopamine, norepinephrine) in the brain.',
+			'side_effects'	=> 'Dry mouth, sore throat, dizziness, nausea, vomiting, ringing in the ears, headache, decreased appetite, weight loss, constipation, trouble sleeping, increased sweating, or shaking (tremor)',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: diabetes, heart disease, high blood pressure, kidney problems, liver disease, use/abuse of drugs/alcohol, seizures or conditions that increase your risk of seizures (including brain/head injury, brain tumor, eating disorders such as bulimia/anorexia nervosa, withdrawal treatment for alcohol/sedative drug dependence).',
+			'interactions'	=> 'pimozide, isocarboxazid, linezolid, methylene blue, moclobemide, phenelzine, procarbazine, rasagiline, selegiline, tranylcypromine',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: seizures, severe confusion, hallucinations, rapid heart rate, loss of consciousness.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Xanax',
+			'dosage'		=> '0.25 mg',
+			'warnings'		=> 'N/A',
+			'uses'			=> 'Alprazolam is used to treat anxiety and panic disorders. It belongs to a class of medications called benzodiazepines which act on the brain and nerves (central nervous system) to produce a calming effect. It works by enhancing the effects of a certain natural chemical in the body (GABA).',
+			'side_effects'	=> 'Drowsiness, dizziness, increased saliva production, or change in sex drive/ability',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: severe lung/breathing problems (such as COPD, sleep apnea), liver disease, kidney disease, drug or alcohol abuse, glaucoma.',
+			'interactions'	=> 'kava, sodium oxybate, itraconazole, ketoconazole, cimetidine, fluoxetine, fluvoxamine, nefazodone, delavirdine, indinavir, erythromycin, rifabutin, St. John\'s wort, carbamazepine, phenytoin',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, slowed/reduced reflexes, slowed breathing, loss of consciousness.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Zocor',
+			'dosage'		=> '10 mg',
+			'warnings'		=> 'N/A',
+			'uses'			=> 'Simvastatin is used along with a proper diet to help lower "bad" cholesterol and fats (such as LDL, triglycerides) and raise "good" cholesterol (HDL) in the blood. It belongs to a group of drugs known as "statins." It works by reducing the amount of cholesterol made by the liver. Lowering "bad" cholesterol and triglycerides and raising "good" cholesterol decreases the risk of heart disease and helps prevent strokes and heart attacks.',
+			'side_effects'	=> 'This medication may rarely cause liver problems. If you notice any of the following rare but serious side effects, tell your doctor immediately: yellowing eyes/skin, dark urine, severe stomach/abdominal pain, persistent nausea/vomiting.',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: liver disease, kidney disease, alcohol use.',
+			'interactions'	=> 'warfarin, cyclosporine, danazol, gemfibrozil',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Zoloft',
+			'dosage'		=> '25 mg',
+			'warnings'		=> 'Antidepressant medications are used to treat a variety of conditions, including depression and other mental/mood disorders. These medications can help prevent suicidal thoughts/attempts and provide other important benefits. However, a small number of people (especially people younger than 25) who take antidepressants for any condition may experience worsening depression, other mental/mood symptoms, or suicidal thoughts/attempts. Therefore, it is very important to talk with the doctor about the risks and benefits of antidepressant medication (especially for people younger than 25), even if treatment is not for a mental/mood condition.',
+			'uses'			=> 'Sertraline is used to treat depression, panic attacks, obsessive compulsive disorder, post-traumatic stress disorder, social anxiety disorder (social phobia), and a severe form of premenstrual syndrome (premenstrual dysphoric disorder).',
+			'side_effects'	=> 'Nausea, dizziness, drowsiness, dry mouth, loss of appetite, increased sweating, diarrhea, upset stomach, or trouble sleeping',
+			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: bleeding problems, liver disease, seizure disorder, thyroid disease.',
+			'interactions'	=> 'pimozide, clopidogrel, ibuprofen, warfarin',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, fainting.'
+		));
 	}
 }
