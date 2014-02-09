@@ -210,6 +210,12 @@ var app = angular
 			   }      
 			} 
 
+			$rootScope.visible = $rootScope.opt_in;
+			var killWatch = $rootScope.$watch('visible', function(curr, prev){
+				$rootScope.getWeather();
+				killWatch();
+			});
+
 			//Wait for WeatherCtrl to load up $rootScope.getWeather function
 			if($rootScope.opt_in == 1){
 				$rootScope.getWeather();
