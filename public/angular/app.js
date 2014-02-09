@@ -10,6 +10,7 @@ var app = angular
 		'factories.appointments',
 		'factories.medications',
 		'factories.contacts',
+		'factories.notifications',
 		'ui.bootstrap',
 		'ui.calendar',
 		'ui.select2'
@@ -54,8 +55,11 @@ var app = angular
 				.otherwise(({redirectTo: '/'}))
 		}
 	])
-	.run(['$rootScope', '$http', 'UserInfo', 'Users', 'Appointments', 'Medications', 
-		function ($rootScope, $http, UserInfo, Users, Appointments, Medications) {
+	.run(['$rootScope', '$http', 'UserInfo', 'Users', 'Appointments', 'Medications', 'Notifications',
+		function ($rootScope, $http, UserInfo, Users, Appointments, Medications, Notifications) {
+
+			$rootScope.notifications = [];
+
 			UserInfo.get({}, function (data) {
 				if (!$rootScope.user_id) {
 					$rootScope.user_id = data.data.id;
@@ -72,15 +76,18 @@ var app = angular
 					$rootScope.appointments = data.data;
 				});
 
-				Medications.get({},
-					function(data) {
-						$rootScope.medications = data.data;
-					}
-				)
+				Medications.get({}, function (data) {
+					$rootScope.medications = data.data;
+				});
+
+				Notifications.get({}, function (data) {
+					$rootScope.notifications = data.data;
+					angular.forEach($rootScope.notifications, function (reminder) {
+			  			reminder.is_active == 1 ? reminder.is_active = false : reminder.is_active = true;
+					});
+				});
 			});
 
-
-			$rootScope.notifications = [];
 			$http.get("http://localhost:8888/carefree/public/api/v1/notifications")
 			.success(function(data, status){
 				$rootScope.notifications = $rootScope.notifications.concat(data.data).filter(function(e){
@@ -90,8 +97,6 @@ var app = angular
 			.error(function(data, status){
 				console.log("ERROR: Failed to retrieve notifications");
 			});
-
-
 
 			$rootScope.weatherIconUrl = "img/default.png";
 
