@@ -99,49 +99,49 @@ class MedicationListTableSeeder extends Seeder {
 			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, fainting.'
 		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Flexeril',
+			'dosage'		=> '5 mg',
+			'warnings'		=> 'N/A',
+			'uses'			=> 'Cyclobenzaprine is used short-term to treat muscle spasms. It is usually used along with rest and physical therapy. It works by helping to relax the muscles.',
+			'side_effects'	=> 'Drowsiness, dizziness, dry mouth, or tiredness',
+			'precautions'	=> 'Before taking cyclobenzaprine, tell your doctor or pharmacist if you are allergic to it; or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
+			'interactions'	=> 'amitriptyline, imipramine, isocarboxazid, linezolid, methylene blue, moclobemide, phenelzine, procarbazine, rasagiline, selegiline, tranylcypromine',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: fast/irregular heartbeat, fainting, severe drowsiness, slurred speech, seizures, mental/mood changes (such as confusion, hallucinations).'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Hydrocodon',
+			'dosage'		=> '7.5 mg',
+			'warnings'		=> 'One ingredient in this product is acetaminophen. Taking too much acetaminophen may cause serious (possibly fatal) liver disease. Adults should not take more than 4000 milligrams (4 grams) of acetaminophen a day. If you have liver problems, consult your doctor or pharmacist for a safe dosage of this medication. Daily use of alcohol, especially when combined with acetaminophen, may increase your risk for liver damage. Avoid alcohol. Check with your doctor or pharmacist for more information. Get medical help right away if you have any symptoms of liver damage, including: dark urine, persistent nausea/vomiting, stomach/abdominal pain, extreme tiredness, or yellowing eyes/skin.',
+			'uses'			=> 'This combination medication is used to relieve moderate to severe pain. It contains a narcotic pain reliever (hydrocodone) and a non-narcotic pain reliever (acetaminophen). Hydrocodone works in the brain to change how your body feels and responds to pain. Acetaminophen can also reduce a fever.',
+			'side_effects'	=> 'Nausea, vomiting, constipation, lightheadedness, dizziness, or drowsiness',
+			'precautions'	=> 'Before taking this medication, tell your doctor or pharmacist if you are allergic to it; or to other narcotics (such as morphine, codeine); or if you have any other allergies. This product may contain inactive ingredients (such as propylene glycol), which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
+			'interactions'	=> 'pentazocine, nalbuphine, butorphanol, ketoconazole, isocarboxazid, linezolid, methylene blue, moclobemide, phenelzine, procarbazine, rasagiline, selegiline, tranylcypromine',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: nausea, vomiting, unusual sweating, slow breathing, slow heartbeat, loss of consciousness.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Lexapro',
+			'dosage'		=> '5 mg',
+			'warnings'		=> 'Antidepressant medications are used to treat a variety of conditions, including depression and other mental/mood disorders. These medications can help prevent suicidal thoughts/attempts and provide other important benefits. However, studies have shown that a small number of people (especially people younger than 25) who take antidepressants for any condition may experience worsening depression, other mental/mood symptoms, or suicidal thoughts/attempts. Therefore, it is very important to talk with the doctor about the risks and benefits of antidepressant medication (especially for people younger than 25), even if treatment is not for a mental/mood condition.',
+			'uses'			=> 'Escitalopram is used to treat depression and anxiety. It works by helping to restore the balance of a certain natural substance (serotonin) in the brain. Escitalopram belongs to a class of drugs known as selective serotonin reuptake inhibitors (SSRI). It may improve your energy level and feelings of well-being and decrease nervousness.',
+			'side_effects'	=> 'Nausea, dry mouth, trouble sleeping, constipation, tiredness, drowsiness, dizziness, and increased sweating',
+			'precautions'	=> 'Before taking escitalopram, tell your doctor or pharmacist if you are allergic to it; or to citalopram; or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
+			'interactions'	=> 'clopidogrel, ibuprofen, warfarin, isocarboxazid, linezolid, methylene blue, moclobemide, phenelzine, procarbazine, rasagiline, selegiline, tranylcypromine',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.'
+		));
 
-		// MedicationList::create(array(
-		// 	'name'			=> '',
-		// 	'dosage'		=> '',
-		// 	'warnings'		=> '',
-		// 	'uses'			=> '',
-		// 	'side_effects'	=> '',
-		// 	'precautions'	=> '',
-		// 	'interactions'	=> '',
-		// 	'overdose'		=> ''
-		// ));
+		MedicationList::create(array(
+			'name'			=> 'Lisinopril',
+			'dosage'		=> '2.5 mg',
+			'warnings'		=> 'This drug can cause serious (possibly fatal) harm to an unborn baby if used during pregnancy. Therefore, it is important to prevent pregnancy while taking this medication. Consult your doctor for more details and to discuss the use of reliable forms of birth control while taking this medication. If you are planning pregnancy, become pregnant, or think you may be pregnant, contact your doctor immediately.',
+			'uses'			=> 'Lisinopril is used to treat high blood pressure (hypertension). Lowering high blood pressure helps prevent strokes, heart attacks, and kidney problems. It is also used to treat heart failure and to improve survival after a heart attack.',
+			'side_effects'	=> 'Dizziness, lightheadedness, tiredness, or headache',
+			'precautions'	=> 'Before taking lisinopril, tell your doctor or pharmacist if you are allergic to it; or to other ACE inhibitors (such as benazepril); or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
+			'interactions'	=> 'aliskiren, lithium, ibuprofen, naproxen',
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, fainting.'
+		));
 
 		// MedicationList::create(array(
 		// 	'name'			=> '',
