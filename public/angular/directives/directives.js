@@ -25,6 +25,7 @@ angular.module('directives', [])
 	return {
 		restrict: 'E',
 		replace: 'true',
+		controller: 'ContactsCtrl',
 		templateUrl: 'angular/directives/contacts.html'
 	}
 })
