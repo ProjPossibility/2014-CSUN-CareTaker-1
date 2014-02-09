@@ -12,7 +12,7 @@ class Appointment extends Eloquent {
 	}
 
 	public function getCreatedAtAttribute($value) {
-		return date('M j, Y g:i A', strtotime($value));
+		return date('g:i A', strtotime($value));
 	}
 
 }
