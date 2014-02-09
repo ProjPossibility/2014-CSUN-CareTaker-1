@@ -45,9 +45,12 @@ class MedicationController extends \BaseController {
         	return $validator->messages();
         } 
 
+        $medlist = MedicationList::where("name", Input::get("name"))->first();
+
         /* Add new medication */ 
         $medication = new Medication();
 		$medication->fill(Input::only(array_keys($rules))); // fill valid data only
+		$medication->medlist_id = ($medlist)?$medlist->id:null;
         $medication->save();
 
         /* Return Response */
