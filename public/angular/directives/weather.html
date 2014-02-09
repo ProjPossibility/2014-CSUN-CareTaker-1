@@ -1,14 +1,16 @@
 <div>
+   <h2>Weather<hr></h2>
    <!-- <button ng-click="getWeather()"></button> -->
 
    <div>
-      <div id="weather-spinner"></div>
+      <div id="weather-spinner" ng-show="weatherData === undefined"></div>
    </div>
 
-   <div id="weather" ng-show="weatherData !== undefined">
+   <div id="weather" ng-hide="weatherData === undefined">
 
       <div>
 
+         <div>{{weatherData.name}}</div>
          <span>{{temperature}}&deg;F</span>
          <img ng-src="{{weatherIconUrl}}" height="75px" width="75px">
          <div>{{weatherDescription}}</div>

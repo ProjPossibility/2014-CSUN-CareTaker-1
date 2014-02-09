@@ -1,40 +1,40 @@
-
-		<div>
-			<div class="pull-right">
-				<button class="btn btn-primary btn-lg" ng-click="addContactForm = true">Add Contact</button>
-				<button class="btn btn-default btn-lg" ng-click="edit = true">Edit All</button>
-				<button class="btn btn-success btn-lg" ng-show="edit" 
-					ng-click="edit = false;
-					updateContact(contact)">Save Changes
-				</button>
-		</div>
-			<table class="table table-striped table-hover">
-				<thead>
-					<tr>
-						<th>Photo</th>
-						<th>First Name</th>
-						<th>Last Name</th>
-						<th>Phone</th>
-						<th>Email</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr ng-repeat="contact in contacts">
-						<td>{{ contact.photo }}</td>
-						<td>{{ contact.user.first_name }}</td>
-						<td>{{ contact.user.last_name }}</td>
-						<td>{{ contact.user.phone_number }}</td>
-						<td>{{ contact.user.email }}</td>
-					</tr>
-					<tr ng-repeat="contact in contacts" ng-show="edit">
-						<td><input type="file" class="form-control" ng-model="contact.photo"></td>
-						<td><input type="text" class="form-control" ng-model="contact.user.first_name"></td>
-						<td><input type="text" class="form-control" ng-model="contact.user.last_name"></td>
-						<td><input type="text" class="form-control" ng-model="contact.user.phone_number"></td>
-						<td><input type="text" class="form-control" ng-model="contact.user.email"></td>
-					</tr>
-				</tbody>
-			</table>
+<div>
+	<h2>Contacts<hr></h2>
+	<div class="pull-right">
+		<button class="btn btn-primary btn-lg" ng-click="addContactForm = true">Add Contact</button>
+		<button class="btn btn-default btn-lg" ng-click="edit = true">Edit All</button>
+		<button class="btn btn-success btn-lg" ng-show="edit" 
+			ng-click="edit = false;
+			updateContact(contact)">Save Changes
+		</button>
+	</div>
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>Photo</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+				<th>Phone</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="contact in contacts">
+				<td>{{ contact.photo }}</td>
+				<td>{{ contact.user.first_name }}</td>
+				<td>{{ contact.user.last_name }}</td>
+				<td>{{ contact.user.phone_number }}</td>
+				<td>{{ contact.user.email }}</td>
+			</tr>
+			<tr ng-repeat="contact in contacts" ng-show="edit">
+				<td><input type="file" class="form-control" ng-model="contact.photo"></td>
+				<td><input type="text" class="form-control" ng-model="contact.user.first_name"></td>
+				<td><input type="text" class="form-control" ng-model="contact.user.last_name"></td>
+				<td><input type="text" class="form-control" ng-model="contact.user.phone_number"></td>
+				<td><input type="text" class="form-control" ng-model="contact.user.email"></td>
+			</tr>
+		</tbody>
+	</table>
 
     <form role="form" ng-show="addContactForm">
     	<div class="form-group">

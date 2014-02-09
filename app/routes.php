@@ -15,6 +15,7 @@ Route::resource('api/v1/medications', 'MedicationController');
 Route::resource('api/v1/appointments', 'AppointmentController');
 Route::resource('api/v1/contacts', 'ContactController');
 Route::resource('api/v1/notifications', 'NotificationController');
+Route::resource('api/v1/medicationlist', 'MedicationListController');
 
 Route::get('api/v1/users/{id}/appointments', 'UserController@getAppointments');
 

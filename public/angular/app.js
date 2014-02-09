@@ -21,6 +21,24 @@ var app = angular
 					templateUrl: 'angular/partials/home.html',
 					controller: 'HomeCtrl'
 				})
+				.when('/medications', {
+					templateUrl: 'angular/directives/medications.html'
+				})
+				.when('/calendar', {
+					templateUrl: 'angular/directives/calendar.html',
+					controller: 'CalendarCtrl'
+				})
+				.when('/appointments', {
+					templateUrl: 'angular/directives/appointments.html'
+				})
+				.when('/contacts', {
+					templateUrl: 'angular/directives/contacts.html',
+					controller: 'ContactsCtrl'
+				})
+				.when('/weather', {
+					templateUrl: 'angular/directives/weather.html',
+					controller: 'WeatherCtrl'
+				})
 				.when('/add-medication', {
 					templateUrl: 'angular/partials/add_medication.html',
 					controller: 'MedicationsCtrl'
@@ -56,13 +74,19 @@ var app = angular
 				)
 			});
 
-			// $rootScope.weatherIntervalId = setInterval(function() {
-			// 	$rootScope.getWeather();
-			// }, 300000);//5 mins = 300,000 ms
+			$rootScope.notifications = [];
 
-			setTimeout(function() {
+			//Wait for WeatherCtrl to load up $rootScope.getWeather function
+			var killWatch = $rootScope.$watch('getWeather', function(curr, prev){
+				if(curr === prev) return;
 				$rootScope.getWeather();
-			}, 1000);
+				killWatch();
+			}, true);
+
+			//Update the weather information every x ms
+			$rootScope.weatherIntervalId = setInterval(function() {
+				$rootScope.getWeather();
+			}, 120000);//5 mins = 300,000 ms
 
 		}
 	]
