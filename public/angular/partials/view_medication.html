@@ -1,0 +1,24 @@
+<h3>{{ medication.name }} - {{ medication.dosage }}</h3>
+
+<div>
+	<tabset>
+		<tab heading="Warnings">
+			{{ medication.medlist_info.warnings }}
+		</tab>
+		<tab heading="Uses">
+			{{ medication.medlist_info.uses }}
+		</tab>
+		<tab heading="Side Effects">
+			{{ medication.medlist_info.side_effects }}
+		</tab>
+		<tab heading="Precautions">
+			{{ medication.medlist_info.precautions }}
+		</tab>
+		<tab heading="Drug Interactions">
+			{{ medication.medlist_info.interactions }}
+		</tab>
+		<tab heading="Overdose Information">
+			{{ medication.medlist_info.overdose }}
+		</tab>
+	</tabset>
+</div>

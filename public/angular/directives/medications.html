@@ -11,7 +11,6 @@
 				<th>Name</th>
 				<th>Dosage</th>
 				<th>Requirements</th>
-				<th>Notes</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -21,10 +20,11 @@
 				<td>{{ medication.name }}</td>
 				<td>{{ medication.dosage }}</td>
 				<td>{{ medication.requirements }}</td>
-				<td>{{ medication.notes }}</td>
 				<td>
 					<a class="btn btn-info btn-lg"
 						href="#/medications/{{ medication.id }}/modify">Edit</a>
+					<a class="btn btn-default btn-lg"
+						href="#/medications/{{ medication.id }}">View</a>
 				</td>
 			</tr>
 		</tbody>

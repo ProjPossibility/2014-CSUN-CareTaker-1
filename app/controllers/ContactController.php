@@ -36,6 +36,8 @@ class ContactController extends \BaseController {
 	{	
 		$input = Input::all();
 
+
+
 		$rules = array(
             'first_name'           	=> 'required', 
             'last_name'           	=> 'required', 
@@ -54,13 +56,16 @@ class ContactController extends \BaseController {
 
         /* Add New User if they don't exist */
         if (!$contact_data) {
-        	/* Consume own API to create user */ 
 
+        	/* Consume own API to create user */ 
         	$request = Request::create('/api/v1/users', 'POST', $input);
 			$response = json_decode(Route::dispatch($request)->getContent(),true);
+
 			if ($response['status'] == 200) {
 				$id = $response['data']['id'];
 				$contact_data = User::findOrFail($id);
+			} else {
+				return $response;
 			}
 
         }
