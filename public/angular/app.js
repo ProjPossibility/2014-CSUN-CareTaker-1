@@ -62,6 +62,7 @@ var app = angular
 					$rootScope.email = data.data.email;
 					$rootScope.first_name = data.data.first_name;
 					$rootScope.last_name = data.data.last_name;
+					$rootScope.opt_in = data.data.opt_in;
 				}
 
 				Users.get({
@@ -210,13 +211,16 @@ var app = angular
 			} 
 
 			//Wait for WeatherCtrl to load up $rootScope.getWeather function
-			$rootScope.getWeather();
+			if($rootScope.opt_in == 1){
+				$rootScope.getWeather();
+			}
 
 			//Update the weather information every x ms
 			$rootScope.weatherIntervalId = setInterval(function() {
-				$rootScope.getWeather();
-			}, 120000);//5 mins = 300,000 ms
-
+				if($rootScope.opt_in == 1){
+					$rootScope.getWeather();
+				}
+			}, 5000);//5 mins = 300,000 ms
 
 
 
