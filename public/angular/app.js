@@ -77,9 +77,10 @@ var app = angular
 			$rootScope.notifications = [];
 
 			//Wait for WeatherCtrl to load up $rootScope.getWeather function
-			$rootScope.$watch('getWeather', function(curr, prev){
+			var killWatch = $rootScope.$watch('getWeather', function(curr, prev){
 				if(curr === prev) return;
 				$rootScope.getWeather();
+				killWatch();
 			}, true);
 
 			//Update the weather information every x ms
