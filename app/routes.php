@@ -19,6 +19,7 @@ Route::resource('api/v1/medicationlist', 'MedicationListController');
 
 /* User Controller */
 Route::get('api/v1/users/{id}/notifcations', 'UserController@getNotifications');
+Route::get('api/v1/users/{id}/generate-notifcations', 'UserController@generateNotifications');
 Route::get('api/v1/users/{id}/appointments', 'UserController@getAppointments');
 Route::get('api/v1/users/{id}/medications', 'UserController@getMedications');
 
