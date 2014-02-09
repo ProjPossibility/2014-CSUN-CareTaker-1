@@ -11,4 +11,8 @@ class Appointment extends Eloquent {
 		return $this->belongsTo('User');
 	}
 
+	public function getCreatedAtAttribute($value) {
+		return date('M j, Y g:i A', strtotime($value));
+	}
+
 }
