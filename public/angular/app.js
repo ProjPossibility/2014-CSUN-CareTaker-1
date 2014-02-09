@@ -19,6 +19,14 @@ var app = angular
 					templateUrl: 'angular/partials/home.html',
 					controller: 'HomeCtrl'
 				})
+				.when('/add-medication', {
+					templateUrl: 'angular/partials/add_medication.html',
+					controller: 'MedicationsCtrl'
+				})
+				.when('/medications/:medication_id/modify', {
+					templateUrl: 'angular/partials/modify_medication.html',
+					controller: 'MedicationsCtrl'
+				})
 				.otherwise(({redirectTo: '/'}))
 		}
 	])
