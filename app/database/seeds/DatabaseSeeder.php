@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('MedicationTableSeeder');
 		$this->call('NotificationTableSeeder');
 		$this->call('MedicationListTableSeeder');
+		$this->call('SeverityTableSeeder');
 	}
 
 }
