@@ -56,6 +56,10 @@ app.controller("WeatherCtrl", function ($scope, $rootScope, $http) {
                });
             }
 
+            if($rootScope.notifications.length > 1){
+               $rootScope.notifications.shift();
+            }
+
 
             var weatherList = data.weather;
             weatherList = weatherList.sort(function(a, b){
