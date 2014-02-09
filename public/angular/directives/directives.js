@@ -44,6 +44,13 @@ angular.module('directives', [])
 		templateUrl: 'angular/directives/appointments.html'
 	}
 })
+.directive('appointmentsToday', function() {
+	return {
+		restrict: 'E',
+		replace: 'true',
+		templateUrl: 'angular/directives/appointments_today.html'
+	}
+})
 .directive('notifications', function(){
 	return {
 		restrict: 'E',
