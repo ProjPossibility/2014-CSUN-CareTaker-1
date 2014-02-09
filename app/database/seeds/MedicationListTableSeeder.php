@@ -7,6 +7,7 @@ class MedicationListTableSeeder extends Seeder {
 		DB::table('medication_list')->delete();
 
 		MedicationList::create(array(
+			'id'				=> 1,
 			'name'			=> 'Adderall',
 			'dosage'		=> '10 mg',
 			'warnings'		=> 'Misuse or abuse of amphetamine may cause '.
@@ -41,6 +42,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 2,
 			'name'			=> 'Celexa',
 			'dosage'		=> '10 mg',
 			'warnings'		=> 'Antidepressant medications are used to treat '.
@@ -78,6 +80,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 3,
 			'name'			=> 'Cipro',
 			'dosage'		=> '500 mg',
 			'warnings'		=> 'This medication may rarely cause tendon damage (such as tendonitis, tendon rupture) during or after treatment. Your risk for tendon problems is greater if you are over 60 years of age, if you are taking corticosteroids (such as prednisone), or if you have a kidney, heart, or lung transplant. Stop exercising, rest, and get medical help right away if you develop joint/muscle/tendon pain or swelling.',
@@ -89,6 +92,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 4,
 			'name'			=> 'Cymbalta',
 			'dosage'		=> '20 mg',
 			'warnings'		=> 'Antidepressant medications are used to treat a variety of conditions, including depression and other mental/mood disorders. These medications can help prevent suicidal thoughts/attempts and provide other important benefits. However, a small number of people (especially people younger than 25) who take antidepressants for any condition may experience worsening depression, other mental/mood symptoms, or suicidal thoughts/attempts. Therefore, it is very important to talk with the doctor about the risks and benefits of antidepressant medication (especially for people younger than 25), even if treatment is not for a mental/mood condition.',
@@ -100,6 +104,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 5,
 			'name'			=> 'Flexeril',
 			'dosage'		=> '5 mg',
 			'warnings'		=> 'N/A',
@@ -111,6 +116,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 6,
 			'name'			=> 'Hydrocodon',
 			'dosage'		=> '7.5 mg',
 			'warnings'		=> 'One ingredient in this product is acetaminophen. Taking too much acetaminophen may cause serious (possibly fatal) liver disease. Adults should not take more than 4000 milligrams (4 grams) of acetaminophen a day. If you have liver problems, consult your doctor or pharmacist for a safe dosage of this medication. Daily use of alcohol, especially when combined with acetaminophen, may increase your risk for liver damage. Avoid alcohol. Check with your doctor or pharmacist for more information. Get medical help right away if you have any symptoms of liver damage, including: dark urine, persistent nausea/vomiting, stomach/abdominal pain, extreme tiredness, or yellowing eyes/skin.',
@@ -122,6 +128,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 7,
 			'name'			=> 'Lexapro',
 			'dosage'		=> '5 mg',
 			'warnings'		=> 'Antidepressant medications are used to treat a variety of conditions, including depression and other mental/mood disorders. These medications can help prevent suicidal thoughts/attempts and provide other important benefits. However, studies have shown that a small number of people (especially people younger than 25) who take antidepressants for any condition may experience worsening depression, other mental/mood symptoms, or suicidal thoughts/attempts. Therefore, it is very important to talk with the doctor about the risks and benefits of antidepressant medication (especially for people younger than 25), even if treatment is not for a mental/mood condition.',
@@ -133,6 +140,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 8,
 			'name'			=> 'Lisinopril',
 			'dosage'		=> '2.5 mg',
 			'warnings'		=> 'This drug can cause serious (possibly fatal) harm to an unborn baby if used during pregnancy. Therefore, it is important to prevent pregnancy while taking this medication. Consult your doctor for more details and to discuss the use of reliable forms of birth control while taking this medication. If you are planning pregnancy, become pregnant, or think you may be pregnant, contact your doctor immediately.',
@@ -144,6 +152,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 9,
 			'name'			=> 'Medrol',
 			'dosage'		=> '2 mg',
 			'warnings'		=> 'N/A',
@@ -155,6 +164,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 10,
 			'name'			=> 'Microzide',
 			'dosage'		=> '12.5 mg',
 			'warnings'		=> 'N/A',
@@ -166,6 +176,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 11,
 			'name'			=> 'Mobic',
 			'dosage'		=> '7.5 mg',
 			'warnings'		=> 'Nonsteroidal anti-inflammatory drugs (including meloxicam) may rarely increase the risk of a heart attack or stroke. The risk may be greater if you have heart disease or increased risk for heart disease (for example, due to smoking, family history of heart disease, or conditions such as high blood pressure or diabetes), or with longer use. This drug should not be taken right before or after heart bypass surgery (CABG).',
@@ -177,6 +188,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 12,
 			'name'			=> 'Naproxen',
 			'dosage'		=> '250 mg',
 			'warnings'		=> 'Nonsteroidal anti-inflammatory drugs (including naproxen) may rarely increase the risk for a heart attack or stroke. The risk may be greater if you have heart disease or increased risk for heart disease (for example, due to smoking, family history of heart disease, or conditions such as high blood pressure or diabetes), or with longer use. This drug should not be taken right before or after heart bypass surgery (CABG).',
@@ -188,6 +200,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 13,
 			'name'			=> 'Neurtontin',
 			'dosage'		=> '600 mg',
 			'warnings'		=> 'N/A',
@@ -199,6 +212,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 14,
 			'name'			=> 'Prednisone',
 			'dosage'		=> '1 mg',
 			'warnings'		=> 'N/A',
@@ -210,6 +224,7 @@ class MedicationListTableSeeder extends Seeder {
 		));
 
 		MedicationList::create(array(
+			'id'				=> 15,
 			'name'			=> 'Prilosec',
 			'dosage'		=> '2.5 mg',
 			'warnings'		=> 'N/A',

@@ -16,6 +16,11 @@ class Medication extends Eloquent {
 	
 		return $this->belongsTo('User');
 	}
+
+	public function medlist_info() {
+	
+		return $this->belongsTo('MedicationList', 'medlist_id');
+	}
 	
 
 }

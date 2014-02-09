@@ -11,5 +11,10 @@ class MedicationList extends Eloquent {
 	 * @var array
 	 */
 	protected $hidden = array('');
+
+	public function medications()
+	{
+		return $this->hasMany('Medication', 'medlist_id');
+	}
 	
 }
