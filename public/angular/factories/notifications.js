@@ -19,12 +19,14 @@ angular.module('factories.notifications', ['ngResource'])
 	            	}
 	            },
 	            post: {
-	            	method: 'POST',
-	            	params: {
-	            		'text': '@text'
-	            	}
-	            },
+	            	method: 'POST'
+	            }
 	        }
 	    );
 	}
 );
+
+	     	               // title: "High Temperature",
+      	               // notification: "Stay hydrated. The temperature is high outside.",
+      	               // severity_id: 2,
+      	               // resources_type_id: 2

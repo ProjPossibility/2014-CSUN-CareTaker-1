@@ -23,7 +23,6 @@ app.controller("MedicationsCtrl", function ($scope, $rootScope, $routeParams, Me
 			notes: medication.notes
 		}, function (data) {
 			$scope.medications.push(medication);
-			window.location = "#/medications"
 		})
 	}
 
