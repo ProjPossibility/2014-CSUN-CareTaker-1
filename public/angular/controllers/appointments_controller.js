@@ -4,9 +4,9 @@ app.controller("AppointmentsCtrl", function ($scope, $rootScope, Appointments){
 		Appointments.add({
 			user_id: $rootScope.user_id,
 			name: appointment.name,
-			location: appointment.location
+			location: appointment.location,
+			appointment_datetime: appointment.datetime
 		}, function (data) {
-			console.log(appointment);
 			$scope.appointments.push(appointment);
 		})
 	}
