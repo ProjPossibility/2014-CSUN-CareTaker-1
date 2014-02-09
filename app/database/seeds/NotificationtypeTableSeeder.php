@@ -23,5 +23,11 @@ class NotificationtypeTableSeeder extends Seeder {
 			'display_name'		=> "Appointment",
 			'system_name'		=> "appointment"
 		));
+
+		Notificationtype::create(array(
+			'id'				=> 4,
+			'display_name'		=> "Other",
+			'system_name'		=> "other"
+		));
 	}
 }

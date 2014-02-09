@@ -6,16 +6,21 @@ class NotificationTableSeeder extends Seeder {
 	{
 		DB::table('notifications')->delete();
 
-		Notification::create(array(
-			'title'				=> "Something is up",
-			'notification'		=> 'This is some sort of message',
-			'user_id'			=> 2,
-			'severity_id'		=> 1,
-			'resources_type_id'	=> 1,
-			'resource_id'		=> 1,
-			'is_active'			=> 1,
-			'created_at'	=> new DateTime,
-			'updated_at'	=> new DateTime
-		));
+		for($i = 1; $i <= 6; $i++){
+
+			Notification::create(array(
+				'title'				=> "Notification 1",
+				'notification'		=> 'This is a notification message',
+				'user_id'			=> $i,
+				'severity_id'		=> $i%2,
+				'resources_type_id'	=> ($i%4)+1,
+				'resource_id'		=> 1,
+				'is_active'			=> 1,
+				'created_at'	=> new DateTime,
+				'updated_at'	=> new DateTime
+			));
+
+		}
+
 	}
 }

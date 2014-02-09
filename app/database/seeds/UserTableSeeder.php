@@ -11,6 +11,7 @@ class UserTableSeeder extends Seeder {
             'first_name'        => 'Arvin',
             'last_name'         => 'Foroutan',
             'password'          => Hash::make('arvin'),
+            'opt_in'            => true,
             'created_at'        => new DateTime,
             'updated_at'        => new DateTime
         ));
@@ -20,6 +21,7 @@ class UserTableSeeder extends Seeder {
             'first_name'        => 'Ursula',
             'last_name'         => 'Messick',
             'password'          => Hash::make('ursula'),
+            'opt_in'            => true,
             'created_at'        => new DateTime,
             'updated_at'        => new DateTime
         ));
@@ -28,6 +30,7 @@ class UserTableSeeder extends Seeder {
             'email'             => 'andranik.tonoyan.606@my.csun.edu',
             'first_name'        => 'Andranik',
             'last_name'         => 'Tonoyan',
+            'opt_in'            => true,
             'password'          => Hash::make('andy'),
             'created_at'        => new DateTime,
             'updated_at'        => new DateTime
@@ -38,6 +41,7 @@ class UserTableSeeder extends Seeder {
             'first_name'        => 'Ryan',
             'last_name'         => 'Chua',
             'password'          => Hash::make('ryan'),
+            'opt_in'            => true,
             'created_at'        => new DateTime,
             'updated_at'        => new DateTime
         ));
@@ -47,6 +51,7 @@ class UserTableSeeder extends Seeder {
             'first_name'        => 'Dragos',
             'last_name'         => 'Guta',
             'password'          => Hash::make('dragos'),
+            'opt_in'            => true,
             'created_at'        => new DateTime,
             'updated_at'        => new DateTime
         ));
@@ -56,6 +61,7 @@ class UserTableSeeder extends Seeder {
             'first_name'        => 'Victor',
             'last_name'         => 'Perez',
             'password'          => Hash::make('victor'),
+            'opt_in'            => true,
             'created_at'        => new DateTime,
             'updated_at'        => new DateTime
         ));
