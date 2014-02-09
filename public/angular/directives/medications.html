@@ -1,9 +1,13 @@
 <div>
-	<button class="btn btn-primary" ng-click="addMedForm = true">Add Medication</button>
-	<button class="btn btn-default" ng-click="edit = true">Edit All</button>
-	<button class="btn btn-success" ng-show="edit" 
-		ng-click="edit = false">Save Changes</button>
-
+	<div class="pull-right">
+		<button class="btn btn-primary" ng-click="addMedForm = true">
+			Add Medication
+		</button>
+		<button class="btn btn-default" ng-click="edit = true">Edit All</button>
+		<button class="btn btn-success" ng-show="edit" 
+			ng-click="edit = false;
+			updateMed(medication)">Save Changes</button>
+	</div>
 	<table class="table">
 		<thead>
 			<tr>
@@ -14,11 +18,35 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="medication in medications">
+			<tr ng-repeat="medication in medications"
+				ng-hide="edit">
 				<td>{{ medication.name }}</td>
 				<td>{{ medication.dosage }}</td>
 				<td>{{ medication.requirements }}</td>
 				<td>{{ medication.notes }}</td>
+			</tr>
+			<tr ng-repeat="medication in medications"
+				ng-show="edit">
+				<td>
+					<input type="text" 
+						class="form-control"
+						ng-model="medication.name">
+				</td>
+				<td>
+					<input type="text"
+						class="form-control"
+						ng-model="medication.dosage">
+				</td>
+				<td>
+					<textarea class="form-control" rows="3"
+						ng-model="medication.requirements">
+					</textarea>
+				</td>
+				<td>
+					<textarea class="form-control" rows="3"
+						ng-model="medication.notes">
+					</textarea>
+				</td>
 			</tr>
 		</tbody>
 	</table>
@@ -50,10 +78,12 @@
 			placeholder="e.g. Do not exceed 200 mg in a 24 hour period.">
 		</textarea>
 
-		<button class="btn btn-success" ng-click="addMed(medication)">Add</button>
+		<button class="btn btn-success" 
+			ng-click="addMed(medication);
+				addMedForm = false;">Add</button>
 		<button class="btn btn-default"
 			ng-click="addMedForm = false;
-				medication.name = '';
+				medication.name='';
 				medication.dosage='';
 				medication.requirements='';
 				medication.notes=''">Cancel</button>
