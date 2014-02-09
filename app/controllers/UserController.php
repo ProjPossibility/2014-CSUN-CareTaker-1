@@ -22,18 +22,19 @@ class UserController extends \BaseController {
 	/**
 	 * Store a newly created resource in storage.
 	 *
+	 * @todo generate random password for contact users
 	 * @return Response
 	 */
 	public function store()
 	{
 		$userdata = Input::all();
-    
+
         $rules = array(
             'first_name'            => 'required|alpha',
             'last_name'             => 'required|alpha',
             'email'                 => 'required|email|unique:users',
-            'password'              => 'required|confirmed',
-            'password_confirmation' => 'required'
+            'password'              => 'confirmed',
+            'password_confirmation' => ''
         );
 
         $validator = Validator::make($userdata, $rules);
@@ -50,6 +51,7 @@ class UserController extends \BaseController {
 
         $user = new User();
         $user->fill(Input::except('_token', 'password_confirmation'));
+        $userdata['password'] = (isset($userdata['password']))?$userdata['password']:"password";
         $user->password = Hash::make($userdata['password']);
         $user->save();
 
