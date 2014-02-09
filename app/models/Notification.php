@@ -9,4 +9,8 @@ class Notification extends Eloquent {
 		return $this->belongsTo('Severity', 'severity_id');
 	}
 
+	public function notificationtype()
+	{
+		return $this->belongsTo('Notificationtype', 'resources_type_id');
+	}
 }

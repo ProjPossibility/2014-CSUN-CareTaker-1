@@ -10,7 +10,7 @@ class NotificationController extends \BaseController {
 	public function index()
 	{
 		$notification = Notification::
-			with("severity")
+			with(array('severity','notificationtype'))
 			->where("user_id",Auth::user()->id)
 			->where("is_active",true)
 			->get();
