@@ -2,7 +2,12 @@
 
 class Notification extends Eloquent {
 
-	protected $fillable = array();
+	protected $fillable = array(
+      'title',
+      'notification',
+      'severity_id',
+      'resources_type_id'
+   );
 
 	public function severity()
 	{
