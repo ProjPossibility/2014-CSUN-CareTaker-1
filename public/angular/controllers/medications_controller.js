@@ -23,7 +23,7 @@ app.controller("MedicationsCtrl", function ($scope, $rootScope, $routeParams, Me
 			notes: medication.notes
 		}, function (data) {
 			$scope.medications.push(medication);
-			window.location = "#/"
+			window.location = "#/medications"
 		})
 	}
 
@@ -35,7 +35,7 @@ app.controller("MedicationsCtrl", function ($scope, $rootScope, $routeParams, Me
 			requirements: medication.requirements,
 			notes: medication.notes
 		}, function (data) {
-			window.location = "#/"
+			window.location = "#/medications"
 		})
 	}
 });

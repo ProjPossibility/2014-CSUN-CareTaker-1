@@ -11,7 +11,6 @@
 				<th>Name</th>
 				<th>Dosage</th>
 				<th>Requirements</th>
-				<th>Notes</th>
 				<th>Action</th>
 			</tr>
 		</thead>
@@ -19,9 +18,8 @@
 			<tr ng-repeat="medication in medications"
 				ng-hide="edit">
 				<td>{{ medication.name }}</td>
-				<td>{{ medication.dosage }}</td>
+				<td>{{ medication.dosage }} every {{ medication.dosage_time }}</td>
 				<td>{{ medication.requirements }}</td>
-				<td>{{ medication.notes }}</td>
 				<td>
 					<a class="btn btn-info btn-lg"
 						href="#/medications/{{ medication.id }}/modify">Edit</a>

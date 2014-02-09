@@ -16,6 +16,7 @@ class CreateMedicationTable extends Migration {
             $table->integer('user_id')->unsigned();
             $table->string('name'); 
      	    $table->string('dosage');
+     	    $table->string('dosage_time');
             $table->string('requirements')->nullable();
             $table->string('notes')->nullable();
             $table->foreign('user_id')->references('id')->on('users');

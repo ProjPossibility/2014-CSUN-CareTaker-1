@@ -35,14 +35,19 @@ class MedicationController extends \BaseController {
             'user_id'            => 'required|integer',
             'name'               => 'required',
             'dosage'             => 'required',
-            'requirements'       => '',
-            'notes'				 => ''
+            'requirements'       => ''
         );
 
         $validator = Validator::make(Input::all(), $rules);
         if ($validator->fails())
         {
-        	return $validator->messages();
+        	/* Return Response */
+	        $response = array(
+				'message' 		=> 'The medication could not be added',
+				'data'			=> $validator->messages()->toArray(),
+				'status' 	 	=> 400       
+			);
+			return Response::make($response, 400);
         } 
 
         $medlist = MedicationList::where("name", Input::get("name"))->first();
@@ -50,6 +55,7 @@ class MedicationController extends \BaseController {
         /* Add new medication */ 
         $medication = new Medication();
 		$medication->fill(Input::only(array_keys($rules))); // fill valid data only
+		$medication->dosage_time = "Night";
 		$medication->medlist_id = ($medlist)?$medlist->id:null;
         $medication->save();
 
