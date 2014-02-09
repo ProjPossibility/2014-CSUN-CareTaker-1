@@ -51,6 +51,9 @@
         <script src="angular/factories/medications.js"></script>
         <script src="angular/directives/directives.js"></script>
         <script src="angular/controllers/home_controller.js"></script>
+        <script src="angular/controllers/weather_controller.js"></script>
         <script src="angular/controllers/medications_controller.js"></script>
+
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/spin.js/1.3.3/spin.min.js"></script>
     </body>
 </html>

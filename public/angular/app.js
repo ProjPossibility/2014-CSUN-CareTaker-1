@@ -53,6 +53,26 @@ var app = angular
 					}
 				)
 			});
+
+			// $rootScope.weatherIntervalId = setInterval(function() {
+			// 	$rootScope.getWeather();
+			// }, 300000);//5 mins = 300,000 ms
+
+			setTimeout(function() {
+				$rootScope.getWeather();
+			}, 1000);
+
 		}
 	]
 );
+
+
+
+
+
+
+
+
+
+
+

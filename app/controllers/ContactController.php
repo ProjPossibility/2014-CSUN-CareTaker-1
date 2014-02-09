@@ -28,16 +28,19 @@ class ContactController extends \BaseController {
 	/**
 	 * Store a newly created resource in storage.
 	 *
-	 * @todo don't pass user_id pass email and provisions user if need be
+	 * @todo allow for different type_ids and not hard-code
 	 * @link api/v1/contacts	POST
 	 * @return Response
 	 */
 	public function store()
-	{
+	{	
+		$input = Input::all();
+
 		$rules = array(
-            'user_id'            	=> 'required|integer', 
-            'type_id'            	=> 'required|integer',
-            'order_id'      	 	=> 'required|integer'
+            'first_name'           	=> 'required', 
+            'last_name'           	=> 'required', 
+            'phone_number'          => 'required', 
+            'email'          	 	=> 'required'
         );
 
         $validator = Validator::make(Input::all(), $rules);
@@ -46,10 +49,21 @@ class ContactController extends \BaseController {
         	return $validator->messages();
         } 
 
+        /* See if user is already in the system */
+        $contact_data = User::where("email",$input['email'])->first()->toArray();
+
+        /* Add New User if they don't exist */
+        if (!$contact_data) {
+        	// To Do contact_data = new User()
+        }
+
         /* Add new contact */ 
         $contact = new Contact();
-		$contact->fill(Input::only(array_keys($rules))); // fill valid data only
+		$contact->user_id = $contact_data['id'];
 		$contact->contact_for_user_id = Auth::user()->id; // current user
+       	$contact->type_id = 1; // temp
+       	$contact->order_id = 1;
+        
         $contact->save();
 
         /* Return Response */
