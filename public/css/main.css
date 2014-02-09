@@ -13,3 +13,4 @@ a:hover, a:focus { text-decoration: none; }
 .select2-container { width: 215px; }
 ul.nav.nav-tabs { margin-bottom: 5px; }
 div.fc-event-inner { background-color: #3a87ad; font-family: Arial, sans-serif; color: white; }
+#datetime > ul { padding: 8px; }

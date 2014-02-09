@@ -34,7 +34,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-resource.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.js"></script>
-        <script src="//code.angularjs.org/1.2.10/angular-animate.min.js"></script>
+        <script src="//code.angularjs.org/1.2.12/angular-animate.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
@@ -57,5 +57,6 @@
         <script src="angular/controllers/contacts_controller.js"></script>
 
         <script src="http://cdnjs.cloudflare.com/ajax/libs/spin.js/1.3.3/spin.min.js"></script>
+        <script src="angular/controllers/calendar_controller.js"></script>
     </body>
 </html>

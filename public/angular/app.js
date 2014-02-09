@@ -11,6 +11,7 @@ var app = angular
 		'factories.medications',
 		'factories.contacts',
 		'ui.bootstrap',
+		'ui.calendar',
 		'ui.select2'
 	])
 	.config(['$routeProvider', 
@@ -19,6 +20,14 @@ var app = angular
 				.when('/', {
 					templateUrl: 'angular/partials/home.html',
 					controller: 'HomeCtrl'
+				})
+				.when('/add-medication', {
+					templateUrl: 'angular/partials/add_medication.html',
+					controller: 'MedicationsCtrl'
+				})
+				.when('/medications/:medication_id/modify', {
+					templateUrl: 'angular/partials/modify_medication.html',
+					controller: 'MedicationsCtrl'
 				})
 				.otherwise(({redirectTo: '/'}))
 		}

@@ -26,7 +26,38 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		 $userdata = Input::all();
+    
+        $rules = array(
+            'first_name'            => 'required|alpha',
+            'last_name'             => 'required|alpha',
+            'email'                 => 'required|email|unique:users',
+            'password'              => 'required|confirmed',
+            'password_confirmation' => 'required'
+        );
+
+        $validator = Validator::make($userdata, $rules);
+
+        if ($validator->fails())
+        {
+           return $validator->messages();
+		}
+
+        $user = new User();
+        $user->fill(Input::except('_token', 'password_confirmation'));
+        $user->password = Hash::make($userdata['password']);
+        $user->save();
+
+        /* Audit Log */ 
+        Log::info('New user: ' . $userdata['email']);
+       
+        $response = array(
+			'message' 		=> 'The user has successfully been added..',
+			'data'			=> $user->toArray(),
+			'status' 	 	=> 200       
+		);
+		return Response::make($response, 200);
+  	
 	}
 
 	/**

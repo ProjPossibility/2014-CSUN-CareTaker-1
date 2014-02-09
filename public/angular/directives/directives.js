@@ -44,3 +44,11 @@ angular.module('directives', [])
 		templateUrl: 'angular/directives/appointments.html'
 	}
 })
+.directive('calendar', function() {
+	return {
+		restrict: 'E',
+		replace: 'true',
+		templateUrl: 'angular/directives/calendar.html',
+		controller: 'CalendarCtrl'
+	}
+})
