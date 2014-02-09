@@ -1,0 +1,31 @@
+<form role="form">
+	<div class="form-group">
+		<label for="updatedContactPhoto">Contact Photo</label>
+		<input type="file" class="form-control" id="updatedContactPhoto"
+			ng-model="contact.user.photo">
+	</div>
+	<div class="form-group">
+		<label for="updatedContactName">Contact First Name</label>
+		<input type="text" class="form-control" id="updatedContactName"
+			ng-model="contact.user.first_name">
+	</div>
+	<div class="form-group">
+		<label for="updatedContactLast">Contact Last Name</label>
+		<input type="text" class="form-control" id="updatedContactLast"
+			ng-model="contact.user.last_name">
+	</div>
+	<div class="form-group">
+		<label for="updatedContactPhone">Contact Phone</label>
+		<input type="text" class="form-control" id="updatedContactPhone"
+			ng-model="contact.user.phone_number">
+	</div>
+	<div class="form-group">
+		<label for="updatedContactEmail">Contact Email</label>
+		<input type="text" class="form-control" id="updatedContactEmail"
+			mg-model="contact.user.email">
+	</div>
+</form>
+
+<br/>
+<button class="btn btn-primary btn-lg" ng-click="updateContact(contact)">Save</button>
+<a href="#/contacts" class="btn btn-default btn-lg">Cancel</a>
