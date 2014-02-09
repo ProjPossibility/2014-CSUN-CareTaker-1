@@ -1,8 +1,8 @@
 <div>
-    <h3><em>Reminders<em></h3>
+    <h3>Notifications<hr></h3>
 
     <span ng-show="notifications.length === 0">
-        You currently have no reminders.
+        You currently have no notifications.
     </span>
 
     <span ng-show="notifications.length > 0">
@@ -10,10 +10,11 @@
     </span>    
     
     <ul>
-        <li ng-repeat="reminder in notifications">
-            <input type="checkbox" ng-model="reminder.is_active" 
-                   ng-click="toggleReminder(reminder)">
-            <span class="done-{{reminder.is_active}}">{{ reminder.notification }}</span>
+        <li ng-repeat="notification in notifications">
+            <input type="checkbox" ng-model="notification.is_active" 
+                   ng-click="toggleReminder(notification)">
+            <span class="done-{{notification.is_active}}">{{ notification.notification }}</span>
         </li>
     </ul>
+    <br/>
 </div>
