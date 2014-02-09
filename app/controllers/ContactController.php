@@ -79,10 +79,12 @@ class ContactController extends \BaseController {
         
         $contact->save();
 
+        $new_contact = Contact::with("user")->findOrFail($contact->id);
+
         /* Return Response */
         $response = array(
-			'message' 		=> 'The contact has been successfully added',
-			'data'			=> $contact->toArray(),
+			'message' 		=> 'The contact has been successfully added.',
+			'data'			=> $new_contact->toArray(),
 			'status' 	 	=> 200       
 		);
 
