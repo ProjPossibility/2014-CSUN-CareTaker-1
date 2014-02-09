@@ -75,9 +75,18 @@ var app = angular
 			});
 
 
-
-
 			$rootScope.notifications = [];
+			$http.get("http://localhost:8888/carefree/public/api/v1/notifications")
+			.success(function(data, status){
+				$rootScope.notifications = $rootScope.notifications.concat(data.data).filter(function(e){
+					return e.resources_type_id != 2;
+				});
+			})
+			.error(function(data, status){
+				console.log("ERROR: Failed to retrieve notifications");
+			});
+
+
 
 			$rootScope.weatherIconUrl = "img/default.png";
 
@@ -89,6 +98,10 @@ var app = angular
 			var target = document.getElementById("weather-spinner");
 			$rootScope.spinner = new Spinner().spin(target);
 
+			/*
+				Have the API take a lat and lon, then the API will get the weather
+				data, and push new notifications if needed
+			*/
 			$rootScope.getWeather = function(){
 
 			   var tempLowExtreme = 60, tempHighExtreme = 70;
@@ -98,11 +111,7 @@ var app = angular
 			      var lat = position.coords.latitude.toFixed(2);
 			      var lon = position.coords.longitude.toFixed(2);
 
-			      $http({
-			         method: "GET",
-			         url: "http://api.openweathermap.org/data/2.5/weather?"+
-			            "lat="+lat+"&lon="+lon
-			      })
+			      $http.get("http://api.openweathermap.org/data/2.5/weather?"+"lat="+lat+"&lon="+lon)
 			      .success(function(data, status){
 			         console.log("SUCCESS! Status: " + status);
 			         $rootScope.weatherData = data;
@@ -113,21 +122,45 @@ var app = angular
 			            //Warning - low temp
 			            $rootScope.notifications.push({
 			               title: "Warning: Low Temperature",
-			               message: "Wear a coat. The temperature is low outside."
+			               notification: "Wear a coat. The temperature is low outside.",
+			               severity_id: 2,
+			               resources_type_id: 2
 			            });
+
+			            $http.post("http://localhost:8888/carefree/public/api/v1/notifications",
+				            {
+				               title: "Warning: Low Temperature",
+				               notification: "Wear a coat. The temperature is low outside.",
+				               severity_id: 2,
+				               resources_type_id: 2
+				            }
+			            );
 			         }
 			         if($rootScope.temperature > tempHighExtreme){
 			            //Warning - high temp
 			            $rootScope.notifications.push({
 			               title: "Warning: High Temperature",
-			               message: "Stay hydrated. The temperature is high outside."
+			               notification: "Stay hydrated. The temperature is high outside.",
+			               severity_id: 2, 
+			               resources_type_id: 2
 			            });
+
+                     $http.post("http://localhost:8888/carefree/public/api/v1/notifications",
+         	            {
+         	               title: "Warning: High Temperature",
+         	               notification: "Stay hydrated. The temperature is high outside.",
+         	               severity_id: 2,
+         	               resources_type_id: 2
+         	            }
+                     );
 			         }
 
-			         if($rootScope.notifications.length > 1){
-			            $rootScope.notifications.shift();
+			         for(var i = $rootScope.notifications.length-2; i >= 0; i--){
+			         	if($rootScope.notifications[i].resources_type_id == 2){
+			         		$rootScope.notifications.splice(i, 1);
+			         		break;
+			         	}
 			         }
-
 
 			         var weatherList = data.weather;
 			         weatherList = weatherList.sort(function(a, b){
