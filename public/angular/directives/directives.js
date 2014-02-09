@@ -43,3 +43,14 @@ angular.module('directives', [])
 		templateUrl: 'angular/directives/appointments.html'
 	}
 })
+.directive('notifications', function(){
+	return {
+		restrict: 'E',
+		replace: 'true',
+		templateUrl: 'angular/directives/notifications.html'
+	}
+})
+
+
+
+
