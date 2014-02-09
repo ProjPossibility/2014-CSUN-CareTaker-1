@@ -25,18 +25,20 @@ class AppointmentController extends \BaseController {
 
 		$rules = array(
 			'name' 					=> 'required',
-			'location'				=> 'required'
+			'location'				=> 'required',
+			'appointment_datetime'	=> 'required'
 		);
 
 		$validation = Validator::make($input, $rules);
 
 		if ($validation->fails())
 		{	
-			$response = array(
-				'description' => $validation->errors->first(),
-				'errors'      => $validation->errors->toArray(),
+			/* Return Response */
+	        $response = array(
+				'message' 		=> 'The appointment could not be added',
+				'data'			=> $validation->messages()->toArray(),
+				'status' 	 	=> 400       
 			);
-
 			return Response::make($response, 400);
 		} 
 		else
@@ -44,6 +46,7 @@ class AppointmentController extends \BaseController {
 	        /* Add new appointment */ 
 	        $appointment = new Appointment();
 			$appointment->fill(Input::only(array_keys($rules))); // fill valid data only
+			$appointment->user_id = Auth::user()->id;
 	        $appointment->save();
 
 			$response = array(

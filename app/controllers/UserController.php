@@ -160,4 +160,43 @@ class UserController extends \BaseController {
 		return Response::make($response, 200);
 	}
 
+	/**
+	 * Generate a user's notifications
+	 *
+	 * @link api/v1/users/{id}/generate-notifications	GET
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function generateNotifications($id)
+	{	
+		DB::table('notifications')->where('user_id',$id)->delete();
+		
+		/* Generate Appointments Reminders */
+		$appointments = Appointment::all();
+
+		foreach($appointments as $appt) {
+			$message = "You have an appoint on ____";
+			$notification = new Notification();
+			$notification->title = "Appointment";
+			$notification->notification = $message;
+			$notification->user_id = $id;
+			$notification->severity_id = 3;
+			$notification->resources_type_id = 3;
+			$notification->resource_id = $appt->id;
+			$notification->save();
+		}
+
+  		/* Generate Medication Reminders */
+
+  		/* Reminder all active notrications */ 
+  		$notifications = Notification::
+			with(array('severity','notificationtype'))
+			->where("user_id",$id)
+			->where("is_active",true)
+			->get();
+
+		return $notifications;
+
+	}
+
 }
