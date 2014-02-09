@@ -140,10 +140,13 @@ var app = angular
 			         else if($rootScope.temperature > tempHighExtreme){
 			            //Warning - high temp
 			            $rootScope.notifications.push({
-			               title: "Warning: High Temperature",
+			               title: "High Temperature",
 			               notification: "Stay hydrated. The temperature is high outside.",
 			               severity_id: 2, 
-			               resources_type_id: 2
+			               resources_type_id: 2,
+			               severity: {
+			               	title: "Warning"
+			               }
 			            });
 
 							Notifications.post({
@@ -205,6 +208,12 @@ var app = angular
 			   }      
 			} 
 
+			$rootScope.visible = $rootScope.opt_in;
+			var killWatch = $rootScope.$watch('visible', function(curr, prev){
+				$rootScope.getWeather();
+				killWatch();
+			});
+
 			//Wait for WeatherCtrl to load up $rootScope.getWeather function
 			if($rootScope.opt_in == 1){
 				$rootScope.getWeather();
@@ -212,6 +221,7 @@ var app = angular
 
 			//Update the weather information every x ms
 			$rootScope.weatherIntervalId = setInterval(function() {
+				console.log('In getWeather loop');
 				if($rootScope.opt_in == 1){
 					$rootScope.getWeather();
 				}
