@@ -54,6 +54,7 @@
         <script src="angular/factories/appointments.js"></script>
         <script src="angular/factories/medications.js"></script>
         <script src="angular/factories/contacts.js"></script>
+        <script src="angular/factories/notifications.js"></script>
         <script src="angular/directives/directives.js"></script>
         <script src="angular/controllers/home_controller.js"></script>
         <script src="angular/controllers/weather_controller.js"></script>

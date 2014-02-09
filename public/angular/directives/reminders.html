@@ -1,0 +1,19 @@
+<div>
+    <h3><em>Reminders<em></h3>
+
+    <span ng-show="notifications.length === 0">
+        You currently have no reminders.
+    </span>
+
+    <span ng-show="notifications.length > 0">
+        {{ remaining() }} of {{ notifications.length }} remaining:
+    </span>    
+    
+    <ul>
+        <li ng-repeat="reminder in notifications">
+            <input type="checkbox" ng-model="reminder.is_active" 
+                   ng-click="toggleReminder(reminder)">
+            <span class="done-{{reminder.is_active}}">{{ reminder.notification }}</span>
+        </li>
+    </ul>
+</div>
