@@ -221,7 +221,6 @@ var app = angular
 
 			//Update the weather information every x ms
 			$rootScope.weatherIntervalId = setInterval(function() {
-				console.log('In getWeather loop');
 				if($rootScope.opt_in == 1){
 					$rootScope.getWeather();
 				}
@@ -239,7 +238,7 @@ var app = angular
     			
     			if (appointmentDateNow == dateNow) {
     				return "Today";
-    			} else if (dateDay == dateNow+1) {
+    			} else if (appointmentDate == dateNow+1) {
     				return "Tomorrow";
     			}
 

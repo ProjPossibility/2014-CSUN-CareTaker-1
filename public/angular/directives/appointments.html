@@ -1,6 +1,13 @@
-<div>
+<div ng-controller="AppointmentsCtrl">
 	<h2>Appointments<hr></h2>
-	<table class="table table-striped table-hover">
+	<div class="pull-right">
+		<button class="btn btn-primary btn-lg"
+			ng-click="addApptForm = true"
+			ng-hide="addApptForm">
+			Add Appointment
+		</button>
+	</div>
+	<table class="table table-striped table-hover" ng-hide="addApptForm">
 		<thead>
 			<tr>
 				<th>When</th>
@@ -16,4 +23,26 @@
 			</tr>
 		</tbody>
 	</table>
+
+	<form role="form" ng-show="addApptForm">
+		<div class="form-group">
+			<label for="appointmentName">Appointment Name</label>
+			<input type="text" class="form-control" id="appointmentName" 
+				ng-model="new_appointment.name" 
+				placeholder="e.g. Doctor's Appointment">
+		</div>
+		<div class="form-group">
+			<label for="appointmentLocation">Location</label>
+			<input type="text" class="form-control" id="appointmentLocation"
+				ng-model="new_appointment.location" 
+				placeholder="e.g. Olive View Medical Center">
+		</div>
+
+		<br/>
+		<button class="btn btn-success btn-lg" 
+			ng-click="addAppt(new_appointment);
+				addApptForm = false">Add</button>
+		<button class="btn btn-default btn-lg"
+			ng-click="addApptForm = false">Cancel</button>
+	</form>
 </div>
