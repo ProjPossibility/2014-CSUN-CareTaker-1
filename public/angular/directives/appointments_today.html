@@ -1,0 +1,9 @@
+<div>
+	<h3>Reminders<hr></h3>
+	<div ng-repeat="appointment in appointments">
+		<h4>{{ appointment.name }}</h4>
+		<h5>{{ appointment.location }}</h5>
+		<br/>
+	</div>
+	<h3 ng-show="appointments == 0">You have no appointments today.</h3>
+</div>

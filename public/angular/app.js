@@ -43,6 +43,10 @@ var app = angular
 					templateUrl: 'angular/partials/add_medication.html',
 					controller: 'MedicationsCtrl'
 				})
+				.when('/medications/:medication_id', {
+					templateUrl: 'angular/partials/view_medication.html',
+					controller: 'MedicationsCtrl'
+				})
 				.when('/medications/:medication_id/modify', {
 					templateUrl: 'angular/partials/modify_medication.html',
 					controller: 'MedicationsCtrl'
