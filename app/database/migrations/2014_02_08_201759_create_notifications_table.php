@@ -18,7 +18,6 @@ class CreateNotificationsTable extends Migration {
 		   	$table->string('notification');	
 		   	$table->integer('user_id')->unsigned();	
 		   	$table->foreign('user_id')->references('id')->on('users');
-		   	$table->integer('severity_id')->unsigned();
 			$table->integer('resources_type_id')->unsigned();
 			$table->integer('resource_id')->unsigned();
 		    $table->boolean('is_active')->default(1);

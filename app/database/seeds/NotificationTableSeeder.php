@@ -12,7 +12,7 @@ class NotificationTableSeeder extends Seeder {
 				'title'				=> "Notification 1",
 				'notification'		=> 'This is a notification message',
 				'user_id'			=> $i,
-				'severity_id'		=> $i%2,
+				'severity_id'		=> ($i%2)+1,
 				'resources_type_id'	=> ($i%4)+1,
 				'resource_id'		=> 1,
 				'is_active'			=> 1,
