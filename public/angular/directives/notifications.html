@@ -4,7 +4,7 @@
 
       <accordion-group ng-repeat="notification in notifications">
 
-         <accordion-heading>{{notification.title}}</accordion-heading>
+         <accordion-heading>{{notification.severity.title + ": " + notification.title}}</accordion-heading>
          <accordion-inner>{{notification.notification}}</accordion-inner>
 
       </accordion-group>
