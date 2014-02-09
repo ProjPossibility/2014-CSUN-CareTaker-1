@@ -50,8 +50,8 @@ var app = angular
 				.otherwise(({redirectTo: '/'}))
 		}
 	])
-	.run(['$rootScope', 'UserInfo', 'Users', 'Appointments', 'Medications', 
-		function ($rootScope, UserInfo, Users, Appointments, Medications) {
+	.run(['$rootScope', '$http', 'UserInfo', 'Users', 'Appointments', 'Medications', 
+		function ($rootScope, $http, UserInfo, Users, Appointments, Medications) {
 			UserInfo.get({}, function (data) {
 				if (!$rootScope.user_id) {
 					$rootScope.user_id = data.data.id;
@@ -74,19 +74,114 @@ var app = angular
 				)
 			});
 
+
+
+
 			$rootScope.notifications = [];
 
+			$rootScope.weatherIconUrl = "img/default.png";
+
+			/*
+			   Have some hard coded JSON data from the "API" that would
+			   cause alerts (i.e Heavy Rain, Flaming hot, tornadoe?)
+			*/
+
+			var target = document.getElementById("weather-spinner");
+			$rootScope.spinner = new Spinner().spin(target);
+
+			$rootScope.getWeather = function(){
+
+			   var tempLowExtreme = 60, tempHighExtreme = 70;
+
+			   var getWeatherData = function(position){
+
+			      var lat = position.coords.latitude.toFixed(2);
+			      var lon = position.coords.longitude.toFixed(2);
+
+			      $http({
+			         method: "GET",
+			         url: "http://api.openweathermap.org/data/2.5/weather?"+
+			            "lat="+lat+"&lon="+lon
+			      })
+			      .success(function(data, status){
+			         console.log("SUCCESS! Status: " + status);
+			         $rootScope.weatherData = data;
+
+			         //Might not need $rS.temp. Can calc in {{}} in html?
+			         $rootScope.temperature = parseInt(1.8*(data.main.temp - 273.15)+32);
+			         if($rootScope.temperature < tempLowExtreme){
+			            //Warning - low temp
+			            $rootScope.notifications.push({
+			               title: "Warning: Low Temperature",
+			               message: "Wear a coat. The temperature is low outside."
+			            });
+			         }
+			         if($rootScope.temperature > tempHighExtreme){
+			            //Warning - high temp
+			            $rootScope.notifications.push({
+			               title: "Warning: High Temperature",
+			               message: "Stay hydrated. The temperature is high outside."
+			            });
+			         }
+
+			         if($rootScope.notifications.length > 1){
+			            $rootScope.notifications.shift();
+			         }
+
+
+			         var weatherList = data.weather;
+			         weatherList = weatherList.sort(function(a, b){
+			            return a.id < b.id;
+			         });
+
+
+			         var weatherIconUrl = "http://openweathermap.org/img/w/";
+			         var weatherIcon = undefined;
+			         for(var i=0; i<weatherList.length; i++){
+			            if(weatherList[i].icon !== undefined){
+			               weatherIcon = weatherList[i].icon;
+			               $rootScope.weatherDescription = weatherList[i].description;
+			               break;
+			            }
+			         }
+
+			         if(weatherIcon === undefined){
+			            $rootScope.weatherIconUrl = "img/default.png";
+			         }
+			         else{
+			            weatherIconUrl += weatherIcon + ".png";
+			            $rootScope.weatherIconUrl = weatherIconUrl;
+			         }
+
+			         $rootScope.spinner.stop();
+			         console.log('GOT WEATHER!');
+			      })
+			      .error(function(data, status){
+			         console.log("ERROR! Status: " + status);
+			         
+			         $rootScope.spinner.stop();
+
+			      });
+			   }
+
+			   if (navigator.geolocation){//Geolocation is supported
+			      navigator.geolocation.getCurrentPosition(getWeatherData);
+			   }
+			   else{
+			     //Geolocation is not supported by this browser.
+			   }      
+			} 
+
 			//Wait for WeatherCtrl to load up $rootScope.getWeather function
-			var killWatch = $rootScope.$watch('getWeather', function(curr, prev){
-				if(curr === prev) return;
-				$rootScope.getWeather();
-				killWatch();
-			}, true);
+			$rootScope.getWeather();
 
 			//Update the weather information every x ms
 			$rootScope.weatherIntervalId = setInterval(function() {
 				$rootScope.getWeather();
 			}, 120000);//5 mins = 300,000 ms
+
+
+
 
 			/* Check if an appointment is upcoming (today or tomorrow) */
 			$rootScope.checkAppointmentDate = function (date) {
