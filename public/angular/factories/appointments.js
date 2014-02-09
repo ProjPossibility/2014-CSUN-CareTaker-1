@@ -8,6 +8,9 @@ angular.module('factories.appointments', ['ngResource'])
 	                params: {
 	                	'id': '@id'
 	                }
+	            },
+	            add: {
+	            	method: 'POST'
 	            }
 	        }
 	    );
