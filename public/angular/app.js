@@ -46,11 +46,25 @@ var app = angular
 				)
 			});
 
+			// $rootScope.weatherIntervalId = setInterval(function() {
+			// 	$rootScope.getWeather();
+			// }, 300000);//5 mins = 300,000 ms
 
-			$rootScope.weatherIntervalId = setInterval(function() {
+			setTimeout(function() {
 				$rootScope.getWeather();
-			}, 300000);//5 mins = 300,000 ms
+			}, 1000);
 
 		}
 	]
 );
+
+
+
+
+
+
+
+
+
+
+
