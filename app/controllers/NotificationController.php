@@ -9,17 +9,17 @@ class NotificationController extends \BaseController {
 	 */
 	public function index()
 	{
-		//
-	}
+		$notification = Notification::
+			where("user_id",Auth::user()->id)
+			->where("is_active",true)
+			->get();
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
+	    $response = array(
+			'message' 		=> 'The notification has been successfully found',
+			'data'			=> $notification->toArray(),
+			'status' 	 	=> 200       
+		);
+		return Response::make($response, 200);
 	}
 
 	/**
@@ -39,17 +39,6 @@ class NotificationController extends \BaseController {
 	 * @return Response
 	 */
 	public function show($id)
-	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
 	{
 		//
 	}
