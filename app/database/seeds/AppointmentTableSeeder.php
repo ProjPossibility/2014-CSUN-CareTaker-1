@@ -24,8 +24,8 @@ class AppointmentTableSeeder extends Seeder {
 
         Appointment::create(array(
         	'user_id'			=> 1,
-            'name'             	=> 'Make dinner',
-            'location'        	=> 'Kitchen',
+            'name'             	=> 'Haircut',
+            'location'        	=> 'Beauty salon',
             'created_at'        => new DateTime,
             'updated_at'        => new DateTime
         ));
