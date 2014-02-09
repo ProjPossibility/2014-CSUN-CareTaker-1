@@ -20,7 +20,11 @@
         
         <div class="container">
             <div class="row">
+
+                <notifications class="col-md-12"></notifications>
+
                 <div class="col-md-12" ng-view></div>
+
             </div>
         </div>
 

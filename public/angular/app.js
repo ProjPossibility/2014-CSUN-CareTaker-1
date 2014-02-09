@@ -56,13 +56,18 @@ var app = angular
 				)
 			});
 
-			// $rootScope.weatherIntervalId = setInterval(function() {
-			// 	$rootScope.getWeather();
-			// }, 300000);//5 mins = 300,000 ms
+			$rootScope.notifications = [];
 
-			setTimeout(function() {
+			//Wait for WeatherCtrl to load up $rootScope.getWeather function
+			$rootScope.$watch('getWeather', function(curr, prev){
+				if(curr === prev) return;
 				$rootScope.getWeather();
-			}, 1000);
+			}, true);
+
+			//Update the weather information every x ms
+			$rootScope.weatherIntervalId = setInterval(function() {
+				$rootScope.getWeather();
+			}, 120000);//5 mins = 300,000 ms
 
 		}
 	]

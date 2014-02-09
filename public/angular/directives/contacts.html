@@ -23,15 +23,15 @@
 						<td>{{ contact.photo }}</td>
 						<td>{{ contact.user.first_name }}</td>
 						<td>{{ contact.user.last_name }}</td>
-						<td>{{ contact.user.phone }}</td>
+						<td>{{ contact.user.phone_number }}</td>
 						<td>{{ contact.user.email }}</td>
 					</tr>
 					<tr ng-repeat="contact in contacts" ng-show="edit">
 						<td><input type="file" class="form-control" ng-model="contact.photo"></td>
-						<td><input type="text" class="form-control" ng-model="contact.first_name"></td>
-						<td><input type="text" class="form-control" ng-model="contact.last_name"></td>
-						<td><input type="text" class="form-control" ng-model="contact.phone"></td>
-						<td><input type="text" class="form-control" ng-model="contact.email"></td>
+						<td><input type="text" class="form-control" ng-model="contact.user.first_name"></td>
+						<td><input type="text" class="form-control" ng-model="contact.user.last_name"></td>
+						<td><input type="text" class="form-control" ng-model="contact.user.phone_number"></td>
+						<td><input type="text" class="form-control" ng-model="contact.user.email"></td>
 					</tr>
 				</tbody>
 			</table>

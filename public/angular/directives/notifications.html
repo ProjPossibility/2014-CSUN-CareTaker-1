@@ -1,0 +1,14 @@
+<div>
+   
+   <accordion close-others="true">
+
+      <accordion-group ng-repeat="notification in notifications">
+
+         <accordion-heading>{{notification.title}}</accordion-heading>
+         <accordion-inner>{{notification.message}}</accordion-inner>
+
+      </accordion-group>
+
+  </accordion>
+
+</div>
