@@ -45,6 +45,20 @@ class NotificationController extends \BaseController {
 			return $validator->messages();
 		}
 
+
+		/* All all weather notifications for current user */ 
+		$weatherNotifications = Notification::
+			where("user_id", Auth::user()->id)
+		   ->where('resources_type_id', 2)
+		   ->get();
+
+		foreach($weatherNotifications as $weatherNotification){
+			$weatherNotification->delete();
+		}
+
+		/* add new notification */
+
+
 		$notification = new Notification();
 		$notification->user_id = Auth::user()->id;
 		$notification->title = $input['title'];

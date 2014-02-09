@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration {
 			$table->string('last_name');
 			$table->string('phone_number')->nullable();
 			$table->string('password');
+			$table->boolean('opt_in');
 			$table->timestamps();
 		});
 	}
