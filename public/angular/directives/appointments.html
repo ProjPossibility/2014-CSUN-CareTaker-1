@@ -32,22 +32,17 @@
 				placeholder="e.g. Doctor's Appointment">
 		</div>
 		<div class="form-group">
-			<label for="appointmentLocation">Location</label>
+			<label for="appointmentLocation">Appointment Location</label>
 			<input type="text" class="form-control" id="appointmentLocation"
 				ng-model="new_appointment.location" 
 				placeholder="e.g. Olive View Medical Center">
 		</div>
 
-		<div id="datetime" class="form-group" ng-controller="CalendarCtrl">
-			<label for="datetime-picker">Date</label>
-			<input ng-model="new_appointment.datetime" type="text" required
-				   id="datetime-picker" class="form-control" 
-				   ng-required="true" date-disabled="disabled(date, mode)"
-				   datepicker-popup="{{format}}" is-open="opened" close-text="Close"
-				   datepicker-options="dateOptions" placeholder="Appointment Date">
-			<span class="help-block" ng-show="new_appointmnet.datetime">
-				<em>{{new_appointment.datetime | date:'fullDate' }}</em>
-			</span>
+		<div class="form-group">
+			<label for="appointmentDateTime">Appointment Date Time</label>
+			<input type="text" class="form-control" id="appointmentDateTime"
+				ng-model="new_appointment.appointment_datetime" 
+				placeholder="YYYY-MM-DD HH:MM">
 		</div>
 
 		<br/>
