@@ -62,7 +62,7 @@ class AuthController extends BaseController {
             'last_name'             => 'required|alpha',
             'email'                 => 'required|email|unique:users',
             'password'              => 'required|confirmed',
-            'password_confirmation' => 'required'
+            'password_confirmation' => 'required',
         );
 
         $validator = Validator::make($userdata, $rules);
@@ -78,6 +78,7 @@ class AuthController extends BaseController {
             $user = new User();
             $user->fill(Input::except('_token', 'password_confirmation'));
             $user->password = Hash::make($userdata['password']);
+            $user->opt_in = 1;
             $user->save();
 
             Log::info('New user: ' . $userdata['email']);
