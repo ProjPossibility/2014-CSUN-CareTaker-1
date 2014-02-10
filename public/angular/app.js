@@ -232,6 +232,16 @@ var app = angular
 				$rootScope.notifications.splice(index, 1);
 			}
 
+			$rootScope.generate_notifications = function(){
+				Users.get({
+					'id': $rootScope.user_id,
+					'resource': 'generate-notifications'
+				}, function (data) {
+					$rootScope.notifications = data.data;
+				});
+
+			}
+
 			//Wait for user.opt_in to be set
 			$rootScope.visible = $rootScope.opt_in;
 			var killVisibleWatch = $rootScope.$watch('opt_in', function(curr, prev){
