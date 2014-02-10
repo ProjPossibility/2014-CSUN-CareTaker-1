@@ -165,7 +165,7 @@ class MedicationListTableSeeder extends Seeder {
 
 		MedicationList::create(array(
 			'id'				=> 10,
-			'name'			=> 'Microzide',
+			'name'			=> 'Mircozide',
 			'dosage'		=> '12.5 mg',
 			'warnings'		=> 'N/A',
 			'uses'			=> 'This medication is used to treat high blood pressure. Lowering high blood pressure helps prevent strokes, heart attacks, and kidney problems. Hydrochlorothiazide is a "water pill" (diuretic) that causes you to make more urine. This helps your body get rid of extra salt and water.',

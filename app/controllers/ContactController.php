@@ -136,14 +136,19 @@ class ContactController extends \BaseController {
 			return $validator->messages();
 		} 
 
+		// Grab the contact that you want to update
 		$contact = Contact::with('user')->findOrFail($id);
-		$contact->fill(Input::only(array_keys($rules)));
-		$contact->save();
+		$contact_id = $contact->user_id;
+
+		// Find the associated contact in the user table and upate their information
+		$updated_contact = User::findOrFail($contact_id);
+		$updated_contact->fill(Input::only(array_keys($rules)));
+		$updated_contact->save();
 
 		/* Return Response */
 		$response = array(
 			'message' 		=> 'The contact has been successfully updated',
-			'data'			=> $contact->toArray(),
+			'data'			=> $updated_contact->toArray(),
 			'status' 	 	=> 200       
 		);
 
