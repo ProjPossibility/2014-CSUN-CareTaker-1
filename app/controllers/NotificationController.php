@@ -68,7 +68,11 @@ class NotificationController extends \BaseController {
 
 		$notification->save();
 
-		//might also need to worry about resource_id
+		$notification = Notification::
+			with(array('severity', 'notificationtype'))
+			->where("user_id",Auth::user()->id)
+			->where("is_active",true)
+			->findOrFail($notification->id);
 
 		$response = array(
 			'message' => 'The notification has successfully been added',
@@ -114,10 +118,11 @@ class NotificationController extends \BaseController {
 		//PUT
 
 		$rules = array(
-			'title' 					=> 'required',
-			'notification' 		=> 'required',
+			'title' 					=> '',
+			'notification' 		=> '',
 			'severity_id' 			=> '',
-			'resources_type_id'  => ''
+			'resources_type_id'  => '',
+			'is_active'				=> ''
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
