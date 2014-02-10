@@ -2,12 +2,25 @@
    
    <accordion close-others="true">
 
-      <accordion-group ng-repeat="notification in notifications">
+      <!-- change color of nitification depending on severity -->
+      <div ng-repeat="notification in notifications">
+
+         <div class="alert alert-danger">
+
+            <strong>{{notification.severity.title}}</strong> {{": " + notification.title}}
+            <button ng-click="clearNotification($index)"></button>
+
+         </div>
+
+
+      </div>
+
+<!--       <accordion-group ng-repeat="notification in notifications">
 
          <accordion-heading>{{notification.severity.title + ": " + notification.title}}</accordion-heading>
          <accordion-inner>{{notification.notification}}</accordion-inner>
 
-      </accordion-group>
+      </accordion-group> -->
 
   </accordion>
 
