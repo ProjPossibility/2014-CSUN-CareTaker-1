@@ -94,5 +94,14 @@ class AppointmentTableSeeder extends Seeder {
             'created_at'        => new DateTime,
             'updated_at'        => new DateTime
         ));
+
+        Appointment::create(array(
+            'user_id'           => 7,
+            'name'              => 'Hearing Appointment',
+            'appointment_datetime' => $date3,
+            'location'          => 'HearX',
+            'created_at'        => new DateTime,
+            'updated_at'        => new DateTime
+        ));
     }
 }
