@@ -246,19 +246,8 @@ var app = angular
 
 			/* Check if an appointment is upcoming (today or tomorrow) */
 			$rootScope.checkAppointmentDate = function (date) {
-				var appointmentDate = new Date(date);
-				var dateToday = new Date();
-
-    			var dateNow = dateToday.getDate();
-    			var appointmentDateNow = appointmentDate.getDate();
-    			
-    			if (appointmentDateNow == dateNow) {
-    				return "Today";
-    			} else if (appointmentDate == dateNow+1) {
-    				return "Tomorrow";
-    			}
-
-    			return date;
+    			var appt_date = new Date(date);
+    			return appt_date.toLocaleString();
 			}
 		}
 	]
