@@ -95,9 +95,6 @@ var app = angular
 			   cause alerts (i.e Heavy Rain, Flaming hot, tornadoe?)
 			*/
 
-			var target = document.getElementById("weather-spinner");
-			$rootScope.spinner = new Spinner().spin(target);
-
 			/*
 				Have the API take a lat and lon, then the API will get the weather
 				data, and push new notifications if needed
@@ -119,43 +116,39 @@ var app = angular
 			         //Might not need $rS.temp. Can calc in {{}} in html?
 			         $rootScope.temperature = parseInt(1.8*(data.main.temp - 273.15)+32);
 			         if($rootScope.temperature < tempLowExtreme){
-			            //Warning - low temp
-			            $rootScope.notifications.push({
-			               title: "Low Temperature",
-			               notification: "Wear a coat. The temperature is low outside.",
-			               severity_id: 2,
-			               resources_type_id: 2,
-			               severity: {
-			               	title: "Warning"
-			               }
-			            });
 
 							Notifications.post({
       	               title: "Low Temperature",
-      	               notification: "Wear a coat. The temperature is low outside.",
+      	               notification: "Brr, it's cold outside!",
       	               severity_id: 2,
       	               resources_type_id: 2
-			            }, function(data){});
+			            }, 
+			            function(data){
+			            	for(var i=0; i<$rootScope.notifications.length; i++){
+			            		if($rootScope.notifications[i].resources_type_id == 2){
+			            			$rootScope.notifications.splice(i, 1);
+			            		}
+			            	}
+			            	$rootScope.notifications.push(data.data);
+			            });
 
 			         }
 			         else if($rootScope.temperature > tempHighExtreme){
-			            //Warning - high temp
-			            $rootScope.notifications.push({
-			               title: "High Temperature",
-			               notification: "Stay hydrated. The temperature is high outside.",
-			               severity_id: 2, 
-			               resources_type_id: 2,
-			               severity: {
-			               	title: "Warning"
-			               }
-			            });
 
 							Notifications.post({
-      	               title: "High Temperature",
+      	               title: "It's hot outside, stay hydrated!",
       	               notification: "Stay hydrated. The temperature is high outside.",
       	               severity_id: 2,
       	               resources_type_id: 2
-			            }, function(data){});
+			            }, 
+			            function(data){
+			            	for(var i=0; i<$rootScope.notifications.length; i++){
+			            		if($rootScope.notifications[i].resources_type_id == 2){
+			            			$rootScope.notifications.splice(i, 1);
+			            		}
+			            	}
+			            	$rootScope.notifications.push(data.data);
+			            });
 
 				
 			         }
@@ -178,7 +171,8 @@ var app = angular
 			         for(var i=0; i<weatherList.length; i++){
 			            if(weatherList[i].icon !== undefined){
 			               weatherIcon = weatherList[i].icon;
-			               $rootScope.weatherDescription = weatherList[i].description;
+			               $rootScope.weatherDescription = weatherList[i].description[0].toUpperCase() + 
+			               	weatherList[i].description.substring(1, weatherList[i].description.length);
 			               break;
 			            }
 			         }
@@ -190,15 +184,7 @@ var app = angular
 			            weatherIconUrl += weatherIcon + ".png";
 			            $rootScope.weatherIconUrl = weatherIconUrl;
 			         }
-
-			         $rootScope.spinner.stop();
-			         console.log('GOT WEATHER!');
-			      })
-			      .error(function(data, status){
-			         console.log("ERROR! Status: " + status);
 			         
-			         $rootScope.spinner.stop();
-
 			      });
 			   }
 
@@ -210,20 +196,26 @@ var app = angular
 			   }      
 			} 
 
-			$rootScope.visible = $rootScope.opt_in;
-			var killWatch = $rootScope.$watch('visible', function(curr, prev){
-				$rootScope.getWeather();
-				killWatch();
-			});
-
-			//Wait for WeatherCtrl to load up $rootScope.getWeather function
-			if($rootScope.opt_in == 1){
-				$rootScope.getWeather();
+			$rootScope.clearNotification = function(index){
+				Notifications.delete({
+					id: $rootScope.notifications[index].id
+				});
+				$rootScope.notifications.splice(index, 1);
 			}
+
+			//Wait for user.opt_in to be set
+			$rootScope.visible = $rootScope.opt_in;
+			var killVisibleWatch = $rootScope.$watch('opt_in', function(curr, prev){
+				if(curr == prev) return;
+				console.log('opt_in:' + $rootScope.opt_in);
+				if($rootScope.opt_in == 1){
+					$rootScope.getWeather();
+				}
+				killVisibleWatch();
+			});
 
 			//Update the weather information every x ms
 			$rootScope.weatherIntervalId = setInterval(function() {
-				console.log('In getWeather loop');
 				if($rootScope.opt_in == 1){
 					$rootScope.getWeather();
 				}
