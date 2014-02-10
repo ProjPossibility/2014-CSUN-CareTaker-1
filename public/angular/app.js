@@ -99,6 +99,13 @@ var app = angular
 				Have the API take a lat and lon, then the API will get the weather
 				data, and push new notifications if needed
 			*/
+
+			$rootScope.locationInfo = {
+				prevLat: undefined,
+				prevLon: undefined,
+				timeInSameLocation: 1
+			}
+
 			$rootScope.getWeather = function(){
 
 			   var tempLowExtreme = 0, tempHighExtreme = 10;
@@ -107,6 +114,23 @@ var app = angular
 
 			      var lat = position.coords.latitude.toFixed(2);
 			      var lon = position.coords.longitude.toFixed(2);
+
+			      if(lat == $rootScope.locationInfo.prevLat &&
+			      		lon == $rootScope.locationInfo.prevLon){
+			      	$rootScope.locationInfo.timeInSameLocation++;
+			      }
+
+			      else{
+			      	$rootScope.locationInfo.timeInSameLocation = 1;
+			      }
+
+			      console.log($rootScope.locationInfo.timeInSameLocation);
+
+			      console.log('times in same location: ' + $rootScope.locationInfo.timeInSameLocation);
+
+			      $rootScope.locationInfo.prevLat = lat;
+			      $rootScope.locationInfo.prevLon = lon;
+
 
 			      $http.get("http://api.openweathermap.org/data/2.5/weather?"+"lat="+lat+"&lon="+lon)
 			      .success(function(data, status){
@@ -218,7 +242,7 @@ var app = angular
 				if($rootScope.opt_in == 1){
 					$rootScope.getWeather();
 				}
-			}, 300000);//5 mins = 300,000 ms
+			}, 3000);//5 mins = 300,000 ms
 
 
 
