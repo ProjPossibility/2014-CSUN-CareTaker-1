@@ -195,6 +195,28 @@ var app = angular
 			   }      
 			} 
 
+			$rootScope.addCSSClass = function (notification) {
+				var css_class = "";
+		
+				switch(parseInt(notification.severity_id))
+				{
+				case 1:
+					css_class = "alert-info";
+				  	break;
+				case 2:
+				  	css_class = "alert-danger";
+				  	break;
+				case 3:
+				  	css_class = "alert-warning";
+				  	break;
+				default:
+				  css_class = "alert-danger";
+				}
+
+				return css_class;
+
+			}
+
 			$rootScope.clearNotification = function(index){
 				Notifications.delete({
 					id: $rootScope.notifications[index].id

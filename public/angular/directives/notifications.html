@@ -5,7 +5,7 @@
       <!-- change color of nitification depending on severity -->
       <div ng-repeat="notification in notifications">
 
-         <div class="alert alert-danger">
+         <div class="alert" ng-class="addCSSClass(notification)">
 
             <strong>{{notification.severity.title}}</strong> {{": " + notification.title}}
             <button ng-click="clearNotification($index)"></button>
