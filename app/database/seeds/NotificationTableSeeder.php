@@ -22,5 +22,18 @@ class NotificationTableSeeder extends Seeder {
 
 		}
 
+
+		Notification::create(array(
+				'title'				=> "Why not go for a walk?",
+				'notification'		=> 'You have been in the same location for too long',
+				'user_id'			=> 7,
+				'severity_id'		=> 1,
+				'resources_type_id'	=> 0,
+				'resource_id'		=> 0,
+				'is_active'			=> 1,
+				'created_at'	=> new DateTime,
+				'updated_at'	=> new DateTime
+			));
+
 	}
 }
