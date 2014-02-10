@@ -38,7 +38,8 @@ class MedicationListTableSeeder extends Seeder {
 				'Canada residents can call a provincial poison control center. '.
 				'Symptoms of overdose may include: severe mental/mood changes, '.
 				'seizures, severe/persistent headache, severe restlessness, '.
-				'fast breathing.'
+				'fast breathing.',
+			'image_name'	=> 'adderall.jpg'
 		));
 
 		MedicationList::create(array(
@@ -76,7 +77,8 @@ class MedicationListTableSeeder extends Seeder {
 			'overdose'		=> 'If overdose is suspected, contact a poison '.
 				'control center or emergency room immediately. US residents '.
 				'can call their local poison control center at 1-800-222-1222. '.
-				'Canada residents can call a provincial poison control center.'
+				'Canada residents can call a provincial poison control center.',
+			'image_name'	=> 'celexa.jpg'
 		));
 
 		MedicationList::create(array(
@@ -88,7 +90,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, diarrhea, dizziness, lightheadedness, headache, and trouble sleeping',
 			'precautions'	=> 'Before taking ciprofloxacin, tell your doctor or pharmacist if you are allergic to it; or to other quinolone antibiotics such as norfloxacin, gemifloxacin, levofloxacin, moxifloxacin, or ofloxacin; or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
 			'interactions'	=> 'acenocoumarol, warfarin, strontium',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.',
+			'image_name'	=> 'cipro.jpg'
 		));
 
 		MedicationList::create(array(
@@ -100,7 +103,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, dry mouth, constipation, loss of appetite, tiredness, drowsiness, or increased sweating',
 			'precautions'	=> 'Before taking duloxetine, tell your doctor or pharmacist if you are allergic to it; or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
 			'interactions'	=> 'clopidogrel, ibuprofen, warfarin, cimetidine, ciprofloxacin, enoxacin',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, fainting.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, fainting.',
+			'image_name'	=> 'cymbalta.jpg'
 		));
 
 		MedicationList::create(array(
@@ -112,7 +116,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Drowsiness, dizziness, dry mouth, or tiredness',
 			'precautions'	=> 'Before taking cyclobenzaprine, tell your doctor or pharmacist if you are allergic to it; or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
 			'interactions'	=> 'amitriptyline, imipramine, isocarboxazid, linezolid, methylene blue, moclobemide, phenelzine, procarbazine, rasagiline, selegiline, tranylcypromine',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: fast/irregular heartbeat, fainting, severe drowsiness, slurred speech, seizures, mental/mood changes (such as confusion, hallucinations).'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: fast/irregular heartbeat, fainting, severe drowsiness, slurred speech, seizures, mental/mood changes (such as confusion, hallucinations).',
+			'image_name'	=> 'flexeril.jpg'
 		));
 
 		MedicationList::create(array(
@@ -124,7 +129,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, vomiting, constipation, lightheadedness, dizziness, or drowsiness',
 			'precautions'	=> 'Before taking this medication, tell your doctor or pharmacist if you are allergic to it; or to other narcotics (such as morphine, codeine); or if you have any other allergies. This product may contain inactive ingredients (such as propylene glycol), which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
 			'interactions'	=> 'pentazocine, nalbuphine, butorphanol, ketoconazole, isocarboxazid, linezolid, methylene blue, moclobemide, phenelzine, procarbazine, rasagiline, selegiline, tranylcypromine',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: nausea, vomiting, unusual sweating, slow breathing, slow heartbeat, loss of consciousness.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: nausea, vomiting, unusual sweating, slow breathing, slow heartbeat, loss of consciousness.',
+			'image_name'	=> 'hydrocodone.jpg'
 		));
 
 		MedicationList::create(array(
@@ -136,7 +142,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, dry mouth, trouble sleeping, constipation, tiredness, drowsiness, dizziness, and increased sweating',
 			'precautions'	=> 'Before taking escitalopram, tell your doctor or pharmacist if you are allergic to it; or to citalopram; or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
 			'interactions'	=> 'clopidogrel, ibuprofen, warfarin, isocarboxazid, linezolid, methylene blue, moclobemide, phenelzine, procarbazine, rasagiline, selegiline, tranylcypromine',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.',
+			'image_name'	=> 'lexapro.jpg'
 		));
 
 		MedicationList::create(array(
@@ -148,7 +155,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Dizziness, lightheadedness, tiredness, or headache',
 			'precautions'	=> 'Before taking lisinopril, tell your doctor or pharmacist if you are allergic to it; or to other ACE inhibitors (such as benazepril); or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
 			'interactions'	=> 'aliskiren, lithium, ibuprofen, naproxen',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, fainting.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, fainting.',
+			'image_name'	=> 'lisinopril.jpg'
 		));
 
 		MedicationList::create(array(
@@ -160,19 +168,21 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, vomiting, heartburn, headache, dizziness, trouble sleeping, appetite changes, increased sweating, or acne',
 			'precautions'	=> 'Before taking methylprednisolone, tell your doctor or pharmacist if you are allergic to it; or to prednisone; or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
 			'interactions'	=> 'aldesleukin, mifepristone, clopidogrel, warfarin, dabigatran, ibuprofen, celecoxib, aspirin, salicylates',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.',
+			'image_name'	=> 'medrol.jpg'
 		));
 
 		MedicationList::create(array(
 			'id'				=> 10,
-			'name'			=> 'Mircozide',
+			'name'			=> 'Microzide',
 			'dosage'		=> '12.5 mg',
 			'warnings'		=> 'N/A',
 			'uses'			=> 'This medication is used to treat high blood pressure. Lowering high blood pressure helps prevent strokes, heart attacks, and kidney problems. Hydrochlorothiazide is a "water pill" (diuretic) that causes you to make more urine. This helps your body get rid of extra salt and water.',
 			'side_effects'	=> 'Upset stomach, dizziness, or headache',
 			'precautions'	=> 'Before taking hydrochlorothiazide, tell your doctor or pharmacist if you are allergic to it; or if you have any other allergies. This product may contain inactive ingredients (such as sulfites found in some brands), which can cause allergic reactions or other problems. Talk to your pharmacist for more details. This drug may make you dizzy. Do not drive, use machinery, or do any activity that requires alertness until you are sure you can perform such activities safely. Limit alcoholic beverages.',
 			'interactions'	=> 'cisapride, dofetilide, lithium, ibuprofen, naproxen',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, weakness, fainting.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, weakness, fainting.',
+			'image_name'	=> 'microzide.jpg'
 		));
 
 		MedicationList::create(array(
@@ -184,7 +194,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Stomach upset, nausea, dizziness, or diarrhea',
 			'precautions'	=> 'Before taking meloxicam, tell your doctor or pharmacist if you are allergic to it; or to aspirin or other NSAIDs (such as ibuprofen, naproxen, celecoxib); or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
 			'interactions'	=> 'aliskiren, captopril, lisinopril, losartan, valsartan, cidofovir, lithium, methotrexate, pemetrexed',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: slow/shallow breathing, extreme drowsiness, severe stomach pain, vomit that looks like coffee grounds.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: slow/shallow breathing, extreme drowsiness, severe stomach pain, vomit that looks like coffee grounds.',
+			'image_name'	=> 'mobic.jpg'
 		));
 
 		MedicationList::create(array(
@@ -196,7 +207,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Upset stomach, nausea, heartburn, headache, drowsiness, or dizziness',
 			'precautions'	=> 'Before taking naproxen, tell your doctor or pharmacist if you are allergic to it; or to aspirin or other NSAIDs (such as ibuprofen, celecoxib); or if you have any other allergies. This product may contain inactive ingredients, which can cause allergic reactions or other problems. Talk to your pharmacist for more details.',
 			'interactions'	=> 'aliskiren, captopril, lisinopril, losartan, valsartan, cidofovir, corticosteroids, lithium',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe stomach pain, extreme drowsiness, seizures.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe stomach pain, extreme drowsiness, seizures.',
+			'image_name'	=> 'naproxen.jpg'
 		));
 
 		MedicationList::create(array(
@@ -208,7 +220,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Drowsiness, dizziness, loss of coordination, tiredness, blurred/double vision, unusual eye movements, or shaking (tremor)',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: kidney disease, mental/mood problems (such as depression, thoughts of suicide), use/abuse of drugs/alcohol.',
 			'interactions'	=> 'alcohol, cetirizine, diphenhydramine, alprazolam, diazepam, zolpidem, codeine, morphine',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, slurred speech, weakness.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, slurred speech, weakness.',
+			'image_name'	=> 'neurontin.jpg'
 		));
 
 		MedicationList::create(array(
@@ -220,7 +233,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, vomiting, loss of appetite, heartburn, trouble sleeping, increased sweating, or acne',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: current/past infections (such as fungal infections, tuberculosis, herpes), heart problems (such as heart failure, recent heart attack), high blood pressure, thyroid problems, kidney disease, liver disease, stomach/intestinal problems (such as ulcer, diverticulitis), bone loss (osteoporosis), mental/mood disorders (such as psychosis, anxiety, depression), eye diseases (such as cataracts, glaucoma), diabetes, mineral imbalance (such as low level of potassium/calcium in the blood), seizures, blood clots, bleeding problems.',
 			'interactions'	=> 'aldesleukin, mifepristone, clopidogrel, warfarin, dabigatran, aspirin, celecoxib, ibuprofen',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.',
+			'image_name'	=> 'prednisone.jpg'
 		));
 
 		MedicationList::create(array(
@@ -232,7 +246,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Headache or abdominal pain',
 			'precautions'	=> 'Some symptoms may actually be signs of a more serious condition. Tell your doctor immediately if you have: heartburn with lightheadedness/sweating/dizziness, chest pain or shoulder pain (especially with trouble breathing, sweating, lightheadedness, pain spreading to arms/jaw/neck/shoulders), unexplained weight loss.',
 			'interactions'	=> 'cilostazol, clopidogrel, methotrexate, rifampin, warfarin',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: confusion, unusual sweating, blurred vision, unusually fast heartbeat.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: confusion, unusual sweating, blurred vision, unusually fast heartbeat.',
+			'image_name'	=> 'prilosec.jpg'
 		));
 
 		MedicationList::create(array(
@@ -243,7 +258,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, drowsiness, dizziness, anxiety, trouble sleeping, loss of appetite, tiredness, sweating, or yawning',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: personal or family history of bipolar/manic-depressive disorder, personal or family history of suicide attempts, liver problems, diabetes, low sodium in the blood (such as may occur while taking "water pills" - diuretics), severe loss of body water (dehydration), seizures, stomach/intestinal ulcers, glaucoma.',
 			'interactions'	=> 'carbamazepine, vinblastine, propafenone, flecainide, desipramine, imipramine, clopidogrel, ibuprofen, warfarin.',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, fainting.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, fainting.',
+			'image_name'	=> 'prozac.jpg'
 		));
 
 		MedicationList::create(array(
@@ -254,7 +270,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Constipation, drowsiness, upset stomach, tiredness, weight gain, blurred vision, or dry mouth',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: eye cataracts, liver disease, low white blood cell count (including history of low white blood cell count caused by medications), seizure disorder, trouble swallowing, thyroid problems, stomach/intestinal blockage (such as severe constipation, bowel obstruction), stomach/intestines that are not moving (such as ileus).',
 			'interactions'	=> 'amiodarone, moxifloxacin, procainamide, quinidine, sotalol, thioridazine',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, loss of consciousness.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, loss of consciousness.',
+			'image_name'	=> 'seroquel.jpg'
 		));
 
 		MedicationList::create(array(
@@ -265,7 +282,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Hair loss may occur during the first few months of treatment. This effect is usually temporary as your body adjusts to this medication. If this effect persists or worsens, tell your doctor or pharmacist promptly.',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: increased thyroid hormones (thyrotoxicosis), decreased adrenal gland function, heart disease (such as coronary artery disease, irregular heartbeat), high blood pressure, diabetes.',
 			'interactions'	=> 'digoxin, theophylline, warfarin',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: fast/pounding/irregular heartbeat, loss of consciousness, confusion, seizures.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: fast/pounding/irregular heartbeat, loss of consciousness, confusion, seizures.',
+			'image_name'	=> 'synthroid.jpg'
 		));
 
 		MedicationList::create(array(
@@ -276,7 +294,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, vomiting, constipation, lightheadedness, dizziness, drowsiness, or headache',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: brain disorders (such as head injury, tumor, seizures), breathing problems (such as asthma, sleep apnea, chronic obstructive pulmonary disease-COPD), kidney disease, liver disease, mental/mood disorders (such as confusion, depression, suicidal thoughts), personal or family history of regular use/abuse of drugs/alcohol, stomach/intestinal problems (such as blockage, constipation, diarrhea due to infection, paralytic ileus), difficulty urinating (such as due to enlarged prostate), gallbladder disease, disease of the pancreas (pancreatitis).',
 			'interactions'	=> 'pentazocine, nalbuphine, butorphanol, naltrexone',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: slow breathing, slow/irregular heartbeat, loss of consciousness, seizure.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: slow breathing, slow/irregular heartbeat, loss of consciousness, seizure.',
+			'image_name'	=> 'tramadol.jpg'
 		));
 
 		MedicationList::create(array(
@@ -287,7 +306,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, vomiting, diarrhea, drowsiness, dizziness, tiredness, blurred vision, changes in weight, headache, muscle ache/pain, dry mouth, bad taste in the mouth, stuffy nose, constipation, or change in sexual interest/ability',
 			'precautions'	=> 'This medication should not be used if you have certain medical conditions. Before using this medicine, consult your doctor or pharmacist if you have: history of priapism from taking trazodone, recent heart attack.',
 			'interactions'	=> 'amitriptyline, nefazodone, digoxin, ketoconazole, itraconazole, atazanavir, indinavir, ritonavir',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: painful/prolonged erection, slow/rapid/irregular heartbeat, unusual drowsiness, unusual dizziness, vomiting, trouble breathing, seizures.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: painful/prolonged erection, slow/rapid/irregular heartbeat, unusual drowsiness, unusual dizziness, vomiting, trouble breathing, seizures.',
+			'image_name'	=> 'trazodone.jpg'
 		));
 
 		MedicationList::create(array(
@@ -298,18 +318,20 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, vomiting, constipation, lightheadedness, dizziness, or drowsiness',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: brain disorders (such as head injury, tumor, seizures), breathing problems (such as asthma, sleep apnea, chronic obstructive pulmonary disease-COPD), kidney disease, liver disease, mental/mood disorders (such as confusion, depression), personal or family history of regular use/abuse of drugs/alcohol, stomach/intestinal problems (such as blockage, constipation, diarrhea due to infection, paralytic ileus), difficulty urinating (such as due to enlarged prostate), gallbladder disease, disease of the pancreas (pancreatitis).',
 			'interactions'	=> 'pentazocine, nalbuphine, butorphanol, ketoconazole, naltrexone, isocarboxazid, linezolid, methylene blue, moclobemide, phenelzine, procarbazine, rasagiline, selegiline, tranylcypromine',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: nausea, vomiting, unusual sweating, slow breathing, slow heartbeat, loss of consciousness.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: nausea, vomiting, unusual sweating, slow breathing, slow heartbeat, loss of consciousness.',
+			'image_name'	=> 'vicodin.jpg'
 		));
 
 		MedicationList::create(array(
-			'name'			=> 'Wellbutrin',
+			'name'			=> 'Welbutrin',
 			'dosage'		=> '150 mg',
 			'warnings'		=> 'Bupropion is an antidepressant used for smoking cessation and to treat a variety of conditions, including depression and other mental/mood disorders. Antidepressants can help prevent suicidal thoughts/attempts and provide other important benefits. However, a small number of people (especially people younger than 25) who take antidepressants for any condition may experience new or worsening depression, other mental/mood symptoms, or suicidal thoughts/attempts. Therefore, it is very important to talk with the doctor about the risks and benefits of antidepressant medication, even if treatment is not for a mental/mood condition.',
 			'uses'			=> 'This medication is used to treat depression. It may also be used to prevent seasonal affective disorder (SAD), a type of depression that occurs each year at the same time (for example, during winter). This medication can improve your mood and feelings of well-being. It may work by restoring the balance of certain natural substances (dopamine, norepinephrine) in the brain.',
 			'side_effects'	=> 'Dry mouth, sore throat, dizziness, nausea, vomiting, ringing in the ears, headache, decreased appetite, weight loss, constipation, trouble sleeping, increased sweating, or shaking (tremor)',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: diabetes, heart disease, high blood pressure, kidney problems, liver disease, use/abuse of drugs/alcohol, seizures or conditions that increase your risk of seizures (including brain/head injury, brain tumor, eating disorders such as bulimia/anorexia nervosa, withdrawal treatment for alcohol/sedative drug dependence).',
 			'interactions'	=> 'pimozide, isocarboxazid, linezolid, methylene blue, moclobemide, phenelzine, procarbazine, rasagiline, selegiline, tranylcypromine',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: seizures, severe confusion, hallucinations, rapid heart rate, loss of consciousness.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: seizures, severe confusion, hallucinations, rapid heart rate, loss of consciousness.',
+			'image_name'	=> 'welbutrin.jpg'
 		));
 
 		MedicationList::create(array(
@@ -320,7 +342,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Drowsiness, dizziness, increased saliva production, or change in sex drive/ability',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: severe lung/breathing problems (such as COPD, sleep apnea), liver disease, kidney disease, drug or alcohol abuse, glaucoma.',
 			'interactions'	=> 'kava, sodium oxybate, itraconazole, ketoconazole, cimetidine, fluoxetine, fluvoxamine, nefazodone, delavirdine, indinavir, erythromycin, rifabutin, St. John\'s wort, carbamazepine, phenytoin',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, slowed/reduced reflexes, slowed breathing, loss of consciousness.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe drowsiness, slowed/reduced reflexes, slowed breathing, loss of consciousness.',
+			'image_name'	=> 'xanax.jpg'
 		));
 
 		MedicationList::create(array(
@@ -331,7 +354,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'This medication may rarely cause liver problems. If you notice any of the following rare but serious side effects, tell your doctor immediately: yellowing eyes/skin, dark urine, severe stomach/abdominal pain, persistent nausea/vomiting.',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: liver disease, kidney disease, alcohol use.',
 			'interactions'	=> 'warfarin, cyclosporine, danazol, gemfibrozil',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center.',
+			'image_name'	=> 'zocor.jpg'
 		));
 
 		MedicationList::create(array(
@@ -342,7 +366,8 @@ class MedicationListTableSeeder extends Seeder {
 			'side_effects'	=> 'Nausea, dizziness, drowsiness, dry mouth, loss of appetite, increased sweating, diarrhea, upset stomach, or trouble sleeping',
 			'precautions'	=> 'Before using this medication, tell your doctor or pharmacist your medical history, especially of: bleeding problems, liver disease, seizure disorder, thyroid disease.',
 			'interactions'	=> 'pimozide, clopidogrel, ibuprofen, warfarin',
-			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, fainting.'
+			'overdose'		=> 'If overdose is suspected, contact a poison control center or emergency room immediately. US residents can call their local poison control center at 1-800-222-1222. Canada residents can call a provincial poison control center. Symptoms of overdose may include: severe dizziness, fainting.',
+			'image_name'	=> 'zoloft.jpg'
 		));
 	}
 }

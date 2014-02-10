@@ -22,6 +22,7 @@ class CreateMedicationListTable extends Migration {
 			$table->string('precautions', 999999);
 			$table->string('interactions', 999999);
 			$table->string('overdose', 999999);
+			$table->string('image_name');
 			$table->softDeletes();
 			$table->timestamps();
 		});
