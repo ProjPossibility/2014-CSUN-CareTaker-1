@@ -203,6 +203,28 @@ var app = angular
 			   }      
 			} 
 
+			$rootScope.addCSSClass = function (notification) {
+				var css_class = "";
+		
+				switch(parseInt(notification.severity_id))
+				{
+				case 1:
+					css_class = "alert-info";
+				  	break;
+				case 2:
+				  	css_class = "alert-danger";
+				  	break;
+				case 3:
+				  	css_class = "alert-warning";
+				  	break;
+				default:
+				  css_class = "alert-danger";
+				}
+
+				return css_class;
+
+			}
+
 			$rootScope.clearNotification = function(index){
 				Notifications.delete({
 					id: $rootScope.notifications[index].id
@@ -226,25 +248,14 @@ var app = angular
 				if($rootScope.opt_in == 1){
 					$rootScope.getWeather();
 				}
-			}, 5000);//5 mins = 300,000 ms
+			}, 300000);//5 mins = 300,000 ms
 
 
 
 			/* Check if an appointment is upcoming (today or tomorrow) */
 			$rootScope.checkAppointmentDate = function (date) {
-				var appointmentDate = new Date(date);
-				var dateToday = new Date();
-
-    			var dateNow = dateToday.getDate();
-    			var appointmentDateNow = appointmentDate.getDate();
-    			
-    			if (appointmentDateNow == dateNow) {
-    				return "Today";
-    			} else if (appointmentDate == dateNow+1) {
-    				return "Tomorrow";
-    			}
-
-    			return date;
+    			var appt_date = new Date(date);
+    			return appt_date.toLocaleString();
 			}
 		}
 	]

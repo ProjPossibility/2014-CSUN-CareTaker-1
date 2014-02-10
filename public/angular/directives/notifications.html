@@ -2,25 +2,17 @@
    
    <accordion close-others="true">
 
-      <!-- change color of nitification depending on severity -->
       <div ng-repeat="notification in notifications">
 
-         <div class="alert alert-danger">
+         <div class="alert" ng-class="addCSSClass(notification)">
 
             <strong>{{notification.severity.title}}</strong> {{": " + notification.title}}
-            <button ng-click="clearNotification($index)"></button>
+            <span style="float:right" class="glyphicon glyphicon-remove" ng-click="clearNotification($index)"></span>
 
          </div>
 
 
       </div>
-
-<!--       <accordion-group ng-repeat="notification in notifications">
-
-         <accordion-heading>{{notification.severity.title + ": " + notification.title}}</accordion-heading>
-         <accordion-inner>{{notification.notification}}</accordion-inner>
-
-      </accordion-group> -->
 
   </accordion>
 
