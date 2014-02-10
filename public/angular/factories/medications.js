@@ -22,6 +22,12 @@ angular.module('factories.medications', ['ngResource'])
 					params: {
 						'id': '@id'
 					}
+				},
+				delete: {
+					method: 'DELETE',
+					params: {
+						'id': '@id'
+					}
 				}
 			}
 		);

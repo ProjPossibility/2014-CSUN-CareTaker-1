@@ -1,7 +1,9 @@
 angular.module('factories.notifications', ['ngResource'])
 	.factory('Notifications', function ($resource) {
-		return $resource('api/v1/notifications',
-	        {},
+		return $resource('api/v1/notifications/:id',
+	        {
+	        	'id': ''
+	        },
 	        {
 	            get: {
 	                method: 'GET'
