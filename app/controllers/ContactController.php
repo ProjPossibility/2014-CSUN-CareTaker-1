@@ -123,7 +123,31 @@ class ContactController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$rules = array(
+			'first_name'		=> 'required',
+			'last_name'			=> 'required',
+			'phone_number'		=> 'required',
+			'email'				=> 'required'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+		if ($validator->fails())
+		{
+			return $validator->messages();
+		} 
+
+		$contact = Contact::with('user')->findOrFail($id);
+		$contact->fill(Input::only(array_keys($rules)));
+		$contact->save();
+
+		/* Return Response */
+		$response = array(
+			'message' 		=> 'The contact has been successfully updated',
+			'data'			=> $contact->toArray(),
+			'status' 	 	=> 200       
+		);
+
+		return Response::make($response, 200);
 	}
 
 	/**

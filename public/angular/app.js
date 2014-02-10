@@ -36,6 +36,14 @@ var app = angular
 					templateUrl: 'angular/directives/contacts.html',
 					controller: 'ContactsCtrl'
 				})
+				.when('/contacts/:contact_id/modify', {
+					templateUrl: 'angular/partials/modify_contact.html',
+					controller: 'ContactsCtrl'
+				})
+				.when('/add-contact', {
+					templateUrl: 'angular/partials/add_contact.html',
+					controller: 'ContactsCtrl'
+				})
 				.when('/weather', {
 					templateUrl: 'angular/directives/weather.html',
 					controller: 'WeatherCtrl'

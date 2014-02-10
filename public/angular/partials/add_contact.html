@@ -1,35 +1,27 @@
 <form role="form">
-    <div class="form-group">
+	<div class="form-group">
 		<label for="contactFirstName">Contact First Name</label>
-		<input type="text" class="form-control" id="first_name" 
-			ng-model="contact.user.first_name" 
-			placeholder="John">
+		<input type="text" class="form-control" id="first_name" ng-model="contact.first_name" placeholder="John">
 	</div>
 	<div class="form-group">
 		<label for="contactLastName">Contact Last Name</label>
-		<input type="text" class="form-control" id="last_name" 
-			ng-model="contact.user.last_name" 
-			placeholder="Doe">
+		<input type="text" class="form-control" id="last_name" ng-model="contact.last_name" placeholder="Doe">
 	</div>
 	<div class="form-group">
 		<label for="contactPhone">Contact Phone</label>
-		<input type="text" class="form-control" id="phone_number" 
-			ng-model="contact.user.phone_number" 
-			placeholder="1-424-5555">
+		<input type="text" class="form-control" id="phone_number" ng-model="contact.phone_number" placeholder="1-424-5555">
 	</div>
 	<div class="form-group">
 		<label for="contactEmail">Contact Email</label>
-		<input type="text" class="form-control" id="contactEmail" 
-			ng-model="contact.user.email" 
-			placeholder="johndoe@gmail.com">
+		<input type="text" class="form-control" id="contactEmail" ng-model="contact.email" placeholder="johndoe@gmail.com">
 	</div>
 	<div class="form-group">
 		<label for="contactPhoto">Contact Photo</label>
 		<input type="file" id="contactPhoto">
 	</div>
-	
-	<button class="btn btn-success btn-lg" 
-		ng-click="addContact(contact);
-				addContactForm = false;">Add</button>
-    <a href="#/contacts" class="btn btn-default btn-lg">Cancel</a>
+
+<button class="btn btn-success btn-lg" 
+		ng-click="addContact(contact)">Add</button>
+<a class="btn btn-default btn-lg"
+		href="#/contacts">Cancel</a>
 </form>
