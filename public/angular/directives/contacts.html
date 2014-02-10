@@ -1,72 +1,32 @@
 <div ng-controller="ContactsCtrl">
 	<h2>Contacts<hr></h2>
 	<div class="pull-right">
-		<button class="btn btn-primary btn-lg" 
-			ng-click="addContactForm = true;"
-			ng-hide="addContactForm">Add Contact
-		</button>
+		<a class="btn btn-primary btn-lg" 
+			href="#/add-contact">Add Contact
+		</a>
 	</div>
-	<h3 ng-show="contacts == 0" 
-		ng-hide="addContactForm">You do not have any emergency contacts saved.</h3>
-	<table class="table table-striped table-hover" 
-		ng-hide="addContactForm" ng-show="contacts != 0">
+	<h3 ng-show="contacts == 0">You do not have any emergency contacts saved.</h3>
+	<table class="table table-striped table-hover" ng-show="contacts != 0">
 		<thead>
 			<tr>
 				<th>Photo</th>
-				<th>First Name</th>
-				<th>Last Name</th>
+				<th>Name</th>
 				<th>Phone</th>
 				<th>Email</th>
+				<th>Action</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr ng-repeat="contact in contacts">
 				<td>{{ contact.photo }}</td>
-				<td>{{ contact.user.first_name }}</td>
-				<td>{{ contact.user.last_name }}</td>
+				<td>{{ contact.user.first_name }} {{ contact.user.last_name }}</td>
 				<td>{{ contact.user.phone_number }}</td>
 				<td>{{ contact.user.email }}</td>
-			</tr>
-			<tr ng-repeat="contact in contacts" ng-show="edit">
-				<td><input type="file" class="form-control" ng-model="contact.photo"></td>
-				<td><input type="text" class="form-control" ng-model="contact.user.first_name"></td>
-				<td><input type="text" class="form-control" ng-model="contact.user.last_name"></td>
-				<td><input type="text" class="form-control" ng-model="contact.user.phone_number"></td>
-				<td><input type="text" class="form-control" ng-model="contact.user.email"></td>
+				<td>
+					<a class="btn btn-info btn-lg"
+						href="#/contacts/{{ contact.id }}/modify">Edit</a>
+				</td>
 			</tr>
 		</tbody>
 	</table>
-
-    <form role="form" ng-show="addContactForm">
-    	<div class="form-group">
-			<label for="contactFirstName">Contact First Name</label>
-			<input type="text" class="form-control" id="first_name" ng-model="contact.first_name" placeholder="John">
-		</div>
-		<div class="form-group">
-			<label for="contactLastName">Contact Last Name</label>
-			<input type="text" class="form-control" id="last_name" ng-model="contact.last_name" placeholder="Doe">
-		</div>
-		<div class="form-group">
-			<label for="contactPhone">Contact Phone</label>
-			<input type="text" class="form-control" id="phone_number" ng-model="contact.phone_number" placeholder="1-424-5555">
-		</div>
-		<div class="form-group">
-			<label for="contactEmail">Contact Email</label>
-			<input type="text" class="form-control" id="contactEmail" ng-model="contact.email" placeholder="johndoe@gmail.com">
-		</div>
-		<div class="form-group">
-			<label for="contactPhoto">Contact Photo</label>
-			<input type="file" id="contactPhoto">
-		</div>
-	
-	<button class="btn btn-success btn-lg" 
-			ng-click="addContact(contact);
-				addContactForm = false;">Add</button>
-    <button class="btn btn-default btn-lg"
-			ng-click="addContactForm = false;
-				contact.first_name='';
-				contact.last_name='';
-				contact.phone_number='';
-				contact.email=''">Cancel</button>
-	</form>
 </div>

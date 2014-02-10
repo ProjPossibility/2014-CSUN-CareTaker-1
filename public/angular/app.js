@@ -36,6 +36,14 @@ var app = angular
 					templateUrl: 'angular/directives/contacts.html',
 					controller: 'ContactsCtrl'
 				})
+				.when('/contacts/:contact_id/modify', {
+					templateUrl: 'angular/partials/modify_contact.html',
+					controller: 'ContactsCtrl'
+				})
+				.when('/add-contact', {
+					templateUrl: 'angular/partials/add_contact.html',
+					controller: 'ContactsCtrl'
+				})
 				.when('/weather', {
 					templateUrl: 'angular/directives/weather.html',
 					controller: 'WeatherCtrl'
@@ -219,6 +227,28 @@ var app = angular
 			   }      
 			} 
 
+			$rootScope.addCSSClass = function (notification) {
+				var css_class = "";
+		
+				switch(parseInt(notification.severity_id))
+				{
+				case 1:
+					css_class = "alert-info";
+				  	break;
+				case 2:
+				  	css_class = "alert-danger";
+				  	break;
+				case 3:
+				  	css_class = "alert-warning";
+				  	break;
+				default:
+				  css_class = "alert-danger";
+				}
+
+				return css_class;
+
+			}
+
 			$rootScope.clearNotification = function(index){
 				Notifications.delete({
 					id: $rootScope.notifications[index].id
@@ -248,19 +278,8 @@ var app = angular
 
 			/* Check if an appointment is upcoming (today or tomorrow) */
 			$rootScope.checkAppointmentDate = function (date) {
-				var appointmentDate = new Date(date);
-				var dateToday = new Date();
-
-    			var dateNow = dateToday.getDate();
-    			var appointmentDateNow = appointmentDate.getDate();
-    			
-    			if (appointmentDateNow == dateNow) {
-    				return "Today";
-    			} else if (appointmentDate == dateNow+1) {
-    				return "Tomorrow";
-    			}
-
-    			return date;
+    			var appt_date = new Date(date);
+    			return appt_date.toLocaleString();
 			}
 		}
 	]
