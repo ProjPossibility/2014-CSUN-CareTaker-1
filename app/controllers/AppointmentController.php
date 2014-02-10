@@ -47,6 +47,7 @@ class AppointmentController extends \BaseController {
 	        $appointment = new Appointment();
 			$appointment->fill(Input::only(array_keys($rules))); // fill valid data only
 			$appointment->user_id = Auth::user()->id;
+			$appointment->appointment_datetime = Input::get("appointment_datetime");;
 	        $appointment->save();
 
 			$response = array(
