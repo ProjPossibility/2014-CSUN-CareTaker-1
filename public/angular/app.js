@@ -282,7 +282,7 @@ var app = angular
 				if($rootScope.opt_in == 1){
 					$rootScope.getWeather();
 				}
-			}, 3000);//5 mins = 300,000 ms
+			}, 30000);//5 mins = 300,000 ms
 
 
 
