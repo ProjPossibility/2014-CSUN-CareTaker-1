@@ -107,6 +107,11 @@
 				}}
 				</div>
 
+				<div class="form-group">
+					<input type="checkbox" checked>
+					<span>Allow us to keep track of your location for weather and activity suggestions</span>
+				</div>
+
 				{{ Form::submit('Register', array('class' => 'btn btn-lg btn-success btn-block')) }}
   			{{ Form::close() }}
 		</div>
