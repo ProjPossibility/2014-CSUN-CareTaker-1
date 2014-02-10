@@ -85,5 +85,14 @@ class AppointmentTableSeeder extends Seeder {
             'created_at'        => new DateTime,
             'updated_at'        => new DateTime
         ));
+
+        Appointment::create(array(
+            'user_id'           => 7,
+            'name'              => 'Dr. Appointment',
+            'appointment_datetime' => $date1,
+            'location'          => 'Kaiser',
+            'created_at'        => new DateTime,
+            'updated_at'        => new DateTime
+        ));
     }
 }
