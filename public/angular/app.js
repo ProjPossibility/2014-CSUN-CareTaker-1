@@ -110,7 +110,6 @@ var app = angular
 
 			      $http.get("http://api.openweathermap.org/data/2.5/weather?"+"lat="+lat+"&lon="+lon)
 			      .success(function(data, status){
-			         console.log("SUCCESS! Status: " + status);
 			         $rootScope.weatherData = data;
 
 			         //Might not need $rS.temp. Can calc in {{}} in html?
@@ -233,7 +232,7 @@ var app = angular
     			
     			if (appointmentDateNow == dateNow) {
     				return "Today";
-    			} else if (dateDay == dateNow+1) {
+    			} else if (appointmentDate == dateNow+1) {
     				return "Tomorrow";
     			}
 

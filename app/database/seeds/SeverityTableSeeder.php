@@ -15,5 +15,10 @@ class SeverityTableSeeder extends Seeder {
 			'id'		=> 2,
 			'title'		=> "Warning",
 		));
+
+		Severity::create(array(
+			'id'		=> 3,
+			'title'		=> "Reminder",
+		));
 	}
 }

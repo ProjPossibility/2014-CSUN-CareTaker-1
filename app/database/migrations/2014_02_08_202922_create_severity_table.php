@@ -18,6 +18,15 @@ class CreateSeverityTable extends Migration {
 		    $table->softDeletes();
 		    $table->timestamps();
         });
+
+		/* Add notification contraints */
+		Schema::table('notifications', function($t) {
+        	$t->integer('severity_id')->unsigned();
+		    $t->foreign('severity_id')->references('id')->on('severities');
+        });
+
+
+        	   	
 	}
 
 	/**
@@ -27,6 +36,12 @@ class CreateSeverityTable extends Migration {
 	 */
 	public function down()
 	{
+		/* Remove notification contraints */
+		Schema::table('notifications', function($t) {
+        	$t->dropForeign('notifications_severity_id_foreign');
+        	$t->dropColumn('severity_id');
+        });
+
 		Schema::drop('severities');
 	}
 

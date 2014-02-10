@@ -4,7 +4,7 @@ class UserController extends \BaseController {
 
 	public function __construct()
 	{
-		$this->beforeFilter('auth');
+		// $this->beforeFilter('auth');
 	}
 
 	/**
@@ -158,6 +158,67 @@ class UserController extends \BaseController {
 		);
 
 		return Response::make($response, 200);
+	}
+
+	/**
+	 * Generate a user's notifications
+	 *
+	 * @link api/v1/users/{id}/generate-notifications	GET
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function generateNotifications($id)
+	{	
+
+		/* Get appointment existing notifications */ 
+  		$appt_notifications = Notification::
+			where("user_id",$id)
+			->where("is_active",true)
+			->where("resources_type_id",3)
+			->get()->toArray();
+
+		/* Generate Appointments Reminders */
+		$appointments = Appointment::
+			where("user_id",$id)
+			->where('appointment_datetime', '>=', new DateTime('today'))->get();
+
+		$appt_ids = array_fetch($appt_notifications, "resource_id");
+		
+		//return $appt_notifications;
+
+		foreach($appointments as $appt) {
+				$phpdate = strtotime( $appt->appointment_datetime );
+				$mysqldate = date( 'M d h:i A', $phpdate );
+				$message = "You have an appointment on " . $mysqldate;
+				$notification = new Notification();
+				$notification->title = "Appointment";
+				$notification->notification = $message;
+				$notification->user_id = $id;
+				$notification->severity_id = 3;
+				$notification->resources_type_id = 3;
+				$notification->resource_id = $appt->id;
+				$notification->save();
+		}
+
+  		/* Generate Medication Reminders */
+		
+
+  		/* Reminder all active notrications */ 
+  		$notifications = Notification::
+			with(array('severity','notificationtype'))
+			->where("user_id",$id)
+			->where("is_active",true)
+			->get();
+
+
+		/* Return Response */
+        $response = array(
+			'message' 		=> 'The notification have been generated',
+			'data'			=> $notifications->toArray(),
+			'status' 	 	=> 200       
+		);
+		return Response::make($response, 200);
+
 	}
 
 }
