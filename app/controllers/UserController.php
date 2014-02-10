@@ -183,21 +183,24 @@ class UserController extends \BaseController {
 			->where('appointment_datetime', '>=', new DateTime('today'))->get();
 
 		$appt_ids = array_fetch($appt_notifications, "resource_id");
-		
-		//return $appt_notifications;
 
 		foreach($appointments as $appt) {
+			$is_duplication = (in_array($appt->id,$appt_ids))?true:false;
+	
+			if(!$is_duplication) {
 				$phpdate = strtotime( $appt->appointment_datetime );
 				$mysqldate = date( 'M d h:i A', $phpdate );
 				$message = "You have an appointment on " . $mysqldate;
+				
 				$notification = new Notification();
-				$notification->title = "Appointment";
+				$notification->title = $message;
 				$notification->notification = $message;
 				$notification->user_id = $id;
 				$notification->severity_id = 3;
 				$notification->resources_type_id = 3;
 				$notification->resource_id = $appt->id;
 				$notification->save();
+			}
 		}
 
   		/* Generate Medication Reminders */
